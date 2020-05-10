@@ -13,3 +13,7 @@ gs -dPDFA=1 \
    -dPDFACompatibilityPolicy=3 \
    -sOutputFile="pdfa-$1" \
    "$1"
+
+# note: PDFACompatibilityPolicy=3 actually doesn't exist. A bug in ghostscript
+# interprets is as something between 1 and 2, without unnecessary failing on
+# various dumb errors.
