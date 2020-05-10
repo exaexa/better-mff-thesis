@@ -33,7 +33,7 @@ After the program starts, control the data avenger with standard \verb-WSAD- con
 
 int main() {
 	int i;
-	if(i = cool::ProcessAllData());
+	if(i = cool::ProcessAllData()) // returns 0 on error
 		std::cout << i << std::endl;
 	else
 		std::cerr << "error!" << std::endl;
