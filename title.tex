@@ -1,0 +1,179 @@
+% the layout is mandatory, edit only in dire circumstances
+
+\pagestyle{empty}
+\hypersetup{pageanchor=false}
+\begin{center}
+
+\ifEN
+\centerline{\mbox{\includegraphics[width=166mm]{img/logo-en.pdf}}}
+\else
+\centerline{\mbox{\includegraphics[width=166mm]{img/logo-cs.pdf}}}
+\fi
+
+\vspace{-8mm}
+\vfill
+
+
+\ifEN
+{\bf\Large BACHELOR THESIS}
+\else
+{\bf\Large BAKALÁŘSKÁ PRÁCE}
+\fi
+
+\vfill
+
+{\LARGE\ThesisAuthor}
+
+\vspace{15mm}
+
+{\LARGE\bfseries\ThesisTitle}
+
+\vfill
+
+\Department
+
+\vfill
+
+{
+\centerline{\vbox{\halign{\hbox to 0.45\hsize{\hfil #}&\hskip 0.5em\parbox[t]{0.45\hsize}{\raggedright #}\cr
+\ifEN Supervisor of the bachelor thesis: \else Vedoucí bakalářské práce: \fi
+& \Supervisor \cr
+\noalign{\vspace{2mm}}
+\ifEN Study programme: \else Studijní program: \fi
+& \StudyProgramme \cr
+\noalign{\vspace{2mm}}
+\ifEN Study branch: \else Studijní obor: \fi
+& \StudyBranch \cr
+}}}}
+
+\vfill
+
+\ifEN Prague \else Praha \fi
+\YearSubmitted
+
+\end{center}
+
+\newpage
+
+
+% remember to sign this!
+
+\openright
+\hypersetup{pageanchor=true}
+\pagestyle{plain}
+\pagenumbering{roman}
+\vglue 0pt plus 1fill
+
+\ifEN
+\noindent
+I declare that I carried out this bachelor thesis independently, and only with the cited
+sources, literature and other professional sources. It has not been used to obtain another
+or the same degree.
+\else
+\noindent
+Prohlašuji, že jsem tuto bakalářskou práci vypracoval(a) samostatně a výhradně
+s~použitím citovaných pramenů, literatury a dalších odborných zdrojů.
+Tato práce nebyla využita k získání jiného nebo stejného titulu.
+\fi
+
+\ifEN
+\medskip\noindent
+I understand that my work relates to the rights and obligations under the Act No.~121/2000 Sb.,
+the Copyright Act, as amended, in particular the fact that the Charles
+University has the right to conclude a license agreement on the use of this
+work as a school work pursuant to Section 60 subsection 1 of the Copyright~Act.
+\else
+\medskip\noindent
+Beru na~vědomí, že se na moji práci vztahují práva a povinnosti vyplývající
+ze zákona č. 121/2000 Sb., autorského zákona v~platném znění, zejména skutečnost,
+že Univerzita Karlova má právo na~uzavření licenční smlouvy o~užití této
+práce jako školního díla podle §60 odst. 1 autorského zákona.
+\fi
+
+\vspace{10mm}
+
+
+\ifEN
+\hbox{\hbox to 0.5\hsize{%
+In \hbox to 6em{\dotfill} date \hbox to 6em{\dotfill}
+\hss}\hbox to 0.5\hsize{\dotfill\quad}}
+\smallskip
+\hbox{\hbox to 0.5\hsize{}\hbox to 0.5\hsize{\hfil Author's signature\hfil}}
+\else
+\hbox{\hbox to 0.5\hsize{%
+V \hbox to 6em{\dotfill} dne \hbox to 6em{\dotfill}
+\hss}\hbox to 0.5\hsize{\dotfill\quad}}
+\smallskip
+\hbox{\hbox to 0.5\hsize{}\hbox to 0.5\hsize{\hfil Podpis autora\hfil}}
+\fi
+
+\vspace{20mm}
+\newpage
+
+% dedication
+
+\openright
+
+\noindent
+\Dedication
+
+\newpage
+
+% mandatory information page
+
+\openright
+
+\vbox to 0.49\vsize{
+\setlength\parindent{0mm}
+\setlength\parskip{5mm}
+
+\ifEN Title: \else Název práce: \fi
+\ThesisTitle
+
+\ifEN Author: \else Autor: \fi
+\ThesisAuthor
+
+\DeptType:
+\Department
+
+\ifEN Supervisor: \else Vedoucí bakalářské práce: \fi
+\Supervisor, \SupervisorsDepartment
+
+\ifEN Abstract: \else Abstrakt: \fi
+\Abstract
+
+\ifEN Keywords: \else Klíčová slova: \fi
+\Keywords
+
+% hack follows (no idea why \long doesn't work for \ifEN)
+\vss}\ifEN\iffalse\else\iftrue\fi\nobreak\vbox to 0.49\vsize{
+\setlength\parindent{0mm}
+\setlength\parskip{5mm}
+
+Title:
+\ThesisTitleEN
+
+Author:
+\ThesisAuthor
+
+\DeptTypeEN:
+\DepartmentEN
+
+Supervisor:
+\Supervisor, \SupervisorsDepartmentEN
+
+Abstract:
+\AbstractEN
+
+Keywords:
+\KeywordsEN
+
+\vss}
+\fi
+
+\newpage
+
+\openright
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}

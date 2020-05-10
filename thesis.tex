@@ -1,0 +1,75 @@
+\documentclass[12pt,a4paper,twoside,openright]{report}
+\let\openright=\cleardoublepage
+
+\input{metadata}
+
+\usepackage[a-2u]{pdfx}
+
+\ifEN\else\usepackage[czech,shorthands=off]{babel}\fi
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% The geometry modification is recommended by the official template, but
+% clashes heavily with the existing page design guidelines. Decide for yourself.
+% (also see https://en.wikipedia.org/wiki/Canons_of_page_construction )
+%
+%\usepackage[textwidth=145mm,textheight=247mm]{geometry}
+
+% font for typesetting (choose one)
+%\usepackage{lmodern} % TeX "original" (popular in math)
+\usepackage[mono=false]{libertine} % popular for comp-sci (ACM uses this)
+%\usepackage{tgpagella} % Palladio-like (popular in formal logic)
+%\usepackage{tgschola} % Schoolbook-like (gives a bit of historic feel)
+
+% some extra packages
+\usepackage{amsmath,amsfonts,amsthm,bm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{float}
+
+% load bibliography tools
+\usepackage[backend=bibtex,natbib]{biblatex}
+\addbibresource{refs}
+
+% remove this if you won't use fancy verbatim environments
+\usepackage{fancyvrb}
+
+% remove this if you won't typeset TikZ graphics
+\usepackage{tikz}
+\usetikzlibrary{positioning} %possibly add more libraries, e.g. fit, decorations, ...
+
+% remove this if you won't typeset any pseudocode
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+% remove this if you are not listing code
+\usepackage{listings}
+
+\hypersetup{unicode}
+\hypersetup{breaklinks=true}
+
+\usepackage[noabbrev]{cleveref}
+
+\input{todos} % remove this before the final version
+\input{macros}
+
+\begin{document}
+
+\include{title}
+
+\tableofcontents
+
+\include{intro}
+\include{ch1}
+\include{ch2}
+\include{ch3}
+\include{conclusion}
+\include{bibliography}
+
+\appendix
+\include{howto}
+%\include{attachments}  % include if your attachments are somehow complicated
+
+\openright
+\end{document}

@@ -1,0 +1,87 @@
+\chapter{More complicated chapter}
+\label{chap:math}
+
+After the reader gained sufficient knowledge in \cref{chap:refs}, you can jump to your own material and conclusions.
+
+You will need definitions (see \cref{defn:x} below in \cref{sec:demo}), theorems (\cref{thm:y}), general mathematics, algorithms (\cref{alg:w}), and tables (\cref{tab:z})\todo{See documentation of package \texttt{booktabs} for hints on typesetting tables. As a main rule, \emph{never} draw a vertical line.}. \Cref{fig:f,fig:g} show how to make a nice figure. See \cref{fig:schema} for an example of TikZ-based diagram.
+
+\section{Some mathematics}
+\label{sec:demo}
+
+\begin{defn}[Triplet]\label{defn:x}
+Given stuff $X$, $Y$ and $Z$, we will write a \emph{triplet} of the stuff as $(X,Y,Z)$.
+\end{defn}
+
+\newcommand{\Col}{\textsc{Colour}}
+
+\begin{thm}[Car coloring]\label{thm:y}
+All cars have the same color. More specifically, for any set of cars $C$, we have
+$$(\forall c_1, c_2 \in C)\:\Col(c_1) = \Col(c_2).$$
+\end{thm}
+
+\begin{proof}
+Use induction on sets of cars $C$. The statement holds trivially for $|C|\leq1$. For larger $C$, select 2 overlapping subsets of $C$ smaller than $|C|$ (thus same-colored). Overlapping cars need to have the same color as the cars outside the overlap, thus also the whole $C$ is same-colored.\todo{This is plain wrong though.}
+\end{proof}
+
+\begin{table}
+\centering
+{\footnotesize\sf
+\begin{tabular}{llrl}
+\toprule
+Column A & Column 2 & Numbers & More \\
+\midrule
+Asd & QWERTY & 123123 & -- \\
+Asd qsd 1sd & \textcolor{red}{BAD} & 234234234 & This line should be helpful. \\
+Asd & \textcolor{blue}{INTERESTING} & 123123123 & -- \\
+Asd qsd 1sd & \textcolor{violet!50}{PLAIN WEIRD} & 234234234 & -- \\
+Asd & QWERTY & 123123 & -- \\
+\addlinespace % a nice non-intrusive separator of data groups (or final table sums)
+Asd qsd 1sd & \textcolor{green!80!black}{GOOD} & 234234299 & -- \\
+Asd & NUMBER & \textbf{123123} & -- \\
+Asd qsd 1sd & DIFFERENT & 234234234 & (no data) \\
+\bottomrule
+\end{tabular}}
+\caption{An example table. Table caption should clearly explain how to interpret the data in the table. Use some visual guide, such as boldface or color coding, to highlight the most important results (e.g., comparison winners).}
+\label{tab:z}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[width=.6\linewidth]{img/ukazka-obr02.pdf}
+\caption{A figure with a plot, not entirely related to anything. If you copy the figures from anywhere, always refer to the original author, ideally by citation (if possible). In particular, this picture --- and many others, also a lot of surrounding code --- was taken from the example bachelor thesis of MFF, originally created by Martin Mareš and others.}
+\label{fig:g}
+\end{figure}
+
+\begin{figure}
+\centering
+\tikzstyle{box}=[rectangle,draw,rounded corners=0.5ex,fill=green!10]
+\begin{tikzpicture}[thick,font=\sf\scriptsize]
+\node[box,rotate=45] (a) {A test.};
+\node[] (b) at (4,0) {Node with no border!};
+\node[circle,draw,dashed,fill=yellow!20, text width=6em, align=center] (c) at (0,4) {Ugly yellow node.\\Is this the Sun?};
+\node[box, right=1cm of c] (d) {Math: $X=\sqrt{\frac{y}{z}}$};
+\draw[->](a) to (b);
+\draw[->](a) to[bend left=30] node[midway,sloped,anchor=north] {flow flows} (c);
+\draw[->>>,dotted](b) to[bend right=30] (d);
+\draw[ultra thick](c) to (d);
+
+\end{tikzpicture}
+\caption{An example diagram typeset with TikZ.}
+\label{fig:schema}
+\end{figure}
+
+\begin{algorithm}
+\begin{algorithmic}
+\Function{ExecuteWithHighProbability}{$A$}
+	\State $r \gets$ a random number between $0$ and $1$
+	\State $\epsilon \gets 0.00000000001$
+	\If{$r\geq\epsilon$}
+		\State execute $A$ \Comment{We discard the return value}
+	\Else
+		\State print: \texttt{Not today, sorry.}
+	\EndIf
+\EndFunction
+\end{algorithmic}
+\caption{Algorithm that executes an action with high probability.}
+\label{alg:w}
+\end{algorithm}

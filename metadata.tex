@@ -1,0 +1,55 @@
+
+% choose a language
+\def\ifEN#1\else#2\fi{#1}   % uncomment this for english
+%\def\ifEN#1\else#2\fi{#2}   % uncomment this for czech
+
+% Fill in the rest of the file.
+% (Note: \xxx is a "ToDo label" which makes the unfilled visible. Remove it.)
+\def\ThesisTitle{\xxx{Thesis title}}
+\def\ThesisAuthor{\xxx{Name Surname}}
+\def\YearSubmitted{\xxx{YEAR}}
+
+\def\Department{\xxx{Name of the department}} % department assigned to the thesis
+\def\DeptType{\xxx{Department}} % Is it a department (katedra), or an institute (ústav)?
+
+\def\Supervisor{\xxx{Supername Supersurname}}
+\def\SupervisorsDepartment{\xxx{department}}
+
+% Study programme and specialization
+\def\StudyProgramme{\xxx{study programme}}
+\def\StudyBranch{\xxx{study branch}}
+
+\def\Dedication{%
+Dedication. \xxx{It is nice to say thanks to supervisors, friends, family, book authors and food providers.}
+}
+
+\def\Abstract{%
+\xxx{Abstract.}
+% recommended length around 120 words.
+% THIS IS NOT A COPY OF YOUR THESIS ASSIGNMENT!
+}
+
+% 3 to 5 keywords (recommended), each enclosed in curly braces
+\def\Keywords{%
+\xxx{{key} {words}}
+}
+
+
+\ifEN\iffalse\else\iftrue\fi %this line is an ugly hack
+
+% If you are writing a czech thesis, you additionally need to fill in the
+% english version of metadata here!
+\def\ThesisTitleEN{\xxx{Thesis title in English}}
+\def\DepartmentEN{\xxx{Name of the department in English}}
+\def\DeptTypeEN{\xxx{Department}}
+\def\SupervisorsDepartmentEN{\xxx{Superdepartment}}
+\def\StudyProgrammeEN{\xxx{study programme}}
+\def\StudyBranchEN{\xxx{study branch}}
+\def\AbstractEN{%
+\xxx{Abstract.}
+}
+\def\KeywordsEN{%
+\xxx{{key} {words}}
+}
+
+\fi %hack ends here

@@ -1,0 +1,33 @@
+\chapter{Important first chapter}
+\label{chap:refs}
+
+First chapter usually builds the theoretical background necessary for readers to understand the rest of the thesis. You should summarize and reference a lot of existing literature and research.
+
+You should use the standard \emph{citations}\todo{Use \textbackslash{}emph command like this, to highlight the first occurrence of an important word or term. Reader will notice it, and hopefully remember the importance.}.
+
+\begin{description}
+\item[Obtaining bibTeX citation] Go to Google Scholar\footnote{\url{https://scholar.google.com}}\todo{This footnote is an acceptable way to `cite' a webpages or URLs. Document without proper titles, authors and publishers generally do not form citations. Consequently, avoid citations of wikipedia pages.}, find the relevant literature, click the tiny double-quote button below the link, and copy the bibTeX entry.
+\item[Saving the citation] Insert the bibTeX entry to the file \texttt{refs.bib}. On the first line of the entry you should see the short reference name --- from Scholar, it usually looks like \texttt{author2015title} --- you will use that to refer to the citation.
+\item[Using the citation] Use the \verb|\cite| command to typeset the citation number correctly in the text; a long citation description will be automaticaly added to the bibliography at the end of the thesis. Always use a non-breakable space before the citing parenthesis to avoid unacceptable line breaks:
+\begin{Verbatim}
+Trees utilize gravity to invade ye
+noble sires~\cite{newton1666apple}.
+\end{Verbatim}
+\item[Why should I bother with citations at all?] For two main reasons:
+\begin{itemize}
+\item You do not have to explain everything in the thesis; instead you send the reader to refer to details in some other literature. Use citations to simplify the detailed explanations.
+\item If you describe something that already exists without using a citation, the reviewer may think that you \emph{claim} to have invented it. Expectably, he will demand academic correctness, and, from your perspective, being accused of plagiarism is not a good starting point for a successful defense. Use citations to give the credit to people who invented what you build upon.
+\end{itemize}
+\item[How many citations should I use?]
+Cite any non-trivial building block or assumption that you use, if it is published in the literature. You do not have to cite trivia, such as the basic definitions taught in the introductory courses.
+
+The rule of thumb is that you should read, understand and briefly review at least around 4 scientific papers. A thesis that contains less than 3 sound citations will spark doubt in reviewers.
+\end{description}
+
+There are several main commands for inserting citations, used as follows:
+\begin{itemize}
+\item \citet{knuth1979tex} described a great system for typesetting theses.
+\item We are typesetting this thesis with LaTeX, which is based on TeX and Metafont~\cite{knuth1979tex}.
+\item The TeX was actually expanded to LaTeX by \citet{lamport1994latex}.
+\item Revered are the authors of these systems!~\cite{knuth1979tex,lamport1994latex}
+\end{itemize}

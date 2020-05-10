@@ -1,0 +1,102 @@
+
+% use this for typesetting a chapter without a number, e.g. intro and outro
+\def\chapwithtoc#1{
+\chapter*{#1}
+\addcontentsline{toc}{chapter}{#1}
+}
+
+% If there is a line/figure overflowing into page margin, this will make the
+% problem evident by drawing a thick black line at the overflowing spot. You
+% should not disable this.
+\overfullrule=3mm
+
+% The maximum stretching of a space. Increasing this makes the text a bit more
+% sloppy, but may prevent the overflows by moving words to next line.
+\emergencystretch=1em
+
+\ifEN
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{defn}{Definition}
+\theoremstyle{remark}
+\newtheorem*{cor}{Corollary}
+\else
+\theoremstyle{plain}
+\newtheorem{thm}{Věta}
+\newtheorem{lemma}{Lemma}
+\newtheorem{claim}{Tvrzení}
+\newtheorem{defn}{Definice}
+\theoremstyle{remark}
+\newtheorem*{cor}{Důsledek}
+\fi
+
+\newenvironment{myproof}{
+  \par\medskip\noindent
+  \textit{\ifEN Proof \else Důkaz \fi}.
+}{
+\newline
+\rightline{$\qedsymbol$}
+}
+
+% real/natural numbers
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+% asymptotic complexity
+\newcommand{\asy}[1]{\mathcal{O}(#1)}
+
+% listings and default lstlisting config (remove if unused)
+\floatstyle{ruled}
+\newfloat{listing}{tbp}{lst}
+\ifEN\floatname{listing}{Listing}
+\else\floatname{listing}{Výpis kódu}\fi
+\lstset{%
+  language=C++,
+  tabsize=2,
+  showstringspaces=false,
+  basicstyle=\footnotesize\tt\color{black!75},
+  identifierstyle=\color{black},
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{red!50!black},
+  keywordstyle=\color{blue!75!black}}
+
+% re-styling of the captions with the float package
+\makeatletter
+\newcommand\floatc@plainb[2]{\setbox\@tempboxa\hbox{{\@fs@cfont #1} #2}%
+\ifdim\wd\@tempboxa>\hsize {\@fs@cfont #1} #2\par
+\else\hbox to\hsize{\hfil\box\@tempboxa\hfil}\fi}
+\newcommand\fs@plainb{\def\@fs@cfont{\bfseries}\let\@fs@capt\floatc@plainb%
+\def\@fs@pre{}\def\@fs@post{}%
+\def\@fs@mid{\vspace\abovecaptionskip\relax}%
+\let\@fs@iftopcapt\iffalse}
+\makeatother
+\floatstyle{plainb}
+\restylefloat{table}
+\restylefloat{figure}
+
+% Czech versions of the used cleveref references (It's not as convenient as in
+% English because of declension, cleveref is limited to sg/pl nominative. Use
+% plain \ref to dodge that.)
+\ifEN\relax\else
+\crefname{chapter}{kapitola}{kapitoly}
+\Crefname{chapter}{Kapitola}{Kapitoly}
+\crefname{section}{sekce}{sekce}
+\Crefname{section}{Sekce}{Sekce}
+\crefname{subsection}{sekce}{sekce}
+\Crefname{subsection}{Sekce}{Sekce}
+\crefname{subsubsection}{sekce}{sekce}
+\Crefname{subsubsection}{Sekce}{Sekce}
+\crefname{figure}{obrázek}{obrázky}
+\Crefname{figure}{Obrázek}{Obrázky}
+\crefname{table}{tabulka}{tabulky}
+\Crefname{table}{Tabulka}{Tabulky}
+\crefname{listing}{výpis}{výpisy}
+\Crefname{listing}{Výpis}{Výpisy}
+\floatname{algorithm}{Algoritmus}
+\crefname{algorithm}{algoritmus}{algoritmy}
+\Crefname{algorithm}{Algoritmus}{Algoritmy}
+\newcommand{\crefpairconjunction}{ a~}
+\newcommand{\crefrangeconjunction}{ a~}
+\fi
