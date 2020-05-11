@@ -3,8 +3,8 @@
 
 What's new:
 
-- modern packages (biblatex, cleveref, font choices)
-- useful hints and some example typesetting
+- modern packages (biblatex, cleveref, better fonts)
+- some useful goodies
 - less confusing directory structure
 - slightly more useful examples (figures, diagrams, tables, code listings)
 - autobuilding of abstract PDF/A from metadata

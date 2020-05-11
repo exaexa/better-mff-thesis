@@ -9,12 +9,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-% The geometry modification is recommended by the official template, but
-% clashes heavily with the existing page design guidelines. Decide for yourself.
-% (also see https://en.wikipedia.org/wiki/Canons_of_page_construction )
-%
+% See https://en.wikipedia.org/wiki/Canons_of_page_construction before
+% modifying the size of printable area. LaTeX defaults are great.
+% If you feel it would help anything, you can enlarge the printable area a bit:
+%\usepackage[textwidth=390pt,textheight=630pt]{geometry}
+% Also, this is the official recommendation (a bit harsh though):
 %\usepackage[textwidth=145mm,textheight=247mm]{geometry}
-
 
 %%% FONTS %%%
 \usepackage{lmodern} % TeX "original" (this sets up the latin mono)
@@ -25,18 +25,20 @@
 %\usepackage[scale=0.96]{tgpagella} % Palladio-like (popular in formal logic).
 
 % Optionally choose a custom sans-serif fonts (e.g. for figures and tables).
-% Default sans-serif font is usually Computer Modern Sans; some font packages
+% Default sans-serif font is usually Latin Modern Sans. Some font packages
 % (e.g. libertinus) replace that with a better matching sans-serif font.
 %\usepackage{tgheros} % recommended and very readable (Helvetica-like)
 %\usepackage{FiraSans} % looks great
 % DO NOT typeset the main text in sans-serif font!
-% Serifs make the text readable.
+% The serifs make the text easily readable on the paper.
 
-% IMPORTANT FONT NOTE: Some font requires additional PDF/A conversion by
-% pdfa.sh. These include: tgpagella
+% IMPORTANT FONT NOTE: Some fonts require additional PDF/A conversion using
+% the pdfa.sh script. These currently include only 'tgpagella'; but various
+% other fonts from the texlive distribution need that too (mainly the Droid
+% font family).
 
 
-% some extra packages
+% some useful packages
 \usepackage{amsmath,amsfonts,amsthm,bm}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -52,22 +54,25 @@
 
 % remove this if you won't typeset TikZ graphics
 \usepackage{tikz}
-\usetikzlibrary{positioning} %possibly add more libraries, e.g. fit, decorations, ...
+\usetikzlibrary{positioning} %add libraries as needed (shapes, decorations, ...)
 
 % remove this if you won't typeset any pseudocode
 \usepackage{algpseudocode}
 \usepackage{algorithm}
 
-% remove this if you are not listing code
+% remove this if you won't list any source code
 \usepackage{listings}
+
 
 \hypersetup{unicode}
 \hypersetup{breaklinks=true}
 
 \usepackage[noabbrev]{cleveref}
 
-\input{todos} % remove this before the final version
-\input{macros}
+\input{todos} % remove this before compiling the final version
+
+\input{macros} % use this file for various custom definitions
+
 
 \begin{document}
 
@@ -84,7 +89,9 @@
 
 \appendix
 \include{howto}
-%\include{attachments}  % include if your attachments are somehow complicated
+
+% if your attachments are complicated, describe them in a separate appendix
+%\include{attachments}
 
 \openright
 \end{document}
