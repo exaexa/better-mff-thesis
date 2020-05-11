@@ -123,7 +123,7 @@ V \hbox to 6em{\dotfill} dne \hbox to 6em{\dotfill}
 
 \openright
 
-\vbox to 0.49\vsize{
+\vbox to 0.49\vsize{\InfoPageFont
 \setlength\parindent{0mm}
 \setlength\parskip{5mm}
 
@@ -145,8 +145,8 @@ V \hbox to 6em{\dotfill} dne \hbox to 6em{\dotfill}
 \ifEN Keywords: \else Klíčová slova: \fi
 \Keywords
 
-% hack follows (no idea why \long doesn't work for \ifEN)
-\vss}\ifEN\iffalse\else\iftrue\fi\nobreak\vbox to 0.49\vsize{
+% ugly hack strikes again
+\vss}\ifEN\iffalse\else\iftrue\fi\nobreak\vbox to 0.49\vsize{\InfoPageFont
 \setlength\parindent{0mm}
 \setlength\parskip{5mm}
 

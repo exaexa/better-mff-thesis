@@ -34,11 +34,17 @@ Dedication. \xxx{It is nice to say thanks to supervisors, friends, family, book 
 \xxx{{key} {words}}
 }
 
+% If your abstracts are long and do not fit in the infopage (in before the
+% Contents listing), you can make the fonts a bit smaller right here.
+% Alternatively, consider increasing the size of the page by uncommenting the
+% geometry modification in thesis.tex.
+\def\InfoPageFont{}
+%\def\InfoPageFont{\small}  %uncomment to decrease font size
 
 \ifEN\iffalse\else\iftrue\fi %this line is an ugly hack
 
 % If you are writing a czech thesis, you additionally need to fill in the
-% english version of metadata here!
+% english translation of the metadata here!
 \def\ThesisTitleEN{\xxx{Thesis title in English}}
 \def\DepartmentEN{\xxx{Name of the department in English}}
 \def\DeptTypeEN{\xxx{Department}}
