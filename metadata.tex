@@ -1,16 +1,38 @@
 
-% choose a language
-\def\ifEN#1\else#2\fi{#1}   % uncomment this for english
-%\def\ifEN#1\else#2\fi{#2}   % uncomment this for czech
 
-% Fill in the rest of the file.
+%%% Choose a language %%%
+
+\newif\ifEN
+\ENtrue   % uncomment this for english
+%\ENfalse   % uncomment this for czech
+
+%%% Configuration of the title page %%%
+
+\newif\ifMFF
+\MFFtrue % comment this out for the version with a big UK university logo
+\def\UKName{Charles University in Prague} %this is used in UK-logo-version
+\def\UKFaculty{Faculty of Mathematics and Physics}
+\def\ThesisTypeName{\ifEN BACHELOR THESIS \else BAKALÁŘSKÁ PRÁCE \fi}
+%\def\ThesisTypeName{\ifEN MASTER THESIS \else DIPLOMOVÁ PRÁCE \fi}
+%\def\ThesisTypeName{\ifEN RIGOROUS THESIS \else RIGORÓZNÍ PRÁCE \fi}
+%\def\ThesisTypeName{\ifEN DOCTORAL THESIS \else DISERTAČNÍ PRÁCE \fi}
+\def\SupervisedThesisName{\ifEN bachelor \else bakalářské \fi}
+%\def\SupervisedThesisName{\ifEN master \else diplomové \fi}
+%\def\SupervisedThesisName{\ifEN rigorous \else rigorózní \fi}
+%\def\SupervisedThesisName{\ifEN doctoral \else disertační \fi}
+
+
+%%% Fill in your details in the rest of the file %%%
+
 % (Note: \xxx is a "ToDo label" which makes the unfilled visible. Remove it.)
 \def\ThesisTitle{\xxx{Thesis title}}
 \def\ThesisAuthor{\xxx{Name Surname}}
 \def\YearSubmitted{\xxx{YEAR}}
 
-\def\Department{\xxx{Name of the department}} % department assigned to the thesis
-\def\DeptType{\xxx{Department}} % Is it a department (katedra), or an institute (ústav)?
+% department assigned to the thesis
+\def\Department{\xxx{Name of the department}}
+% Is it a department (katedra), or an institute (ústav)?
+\def\DeptType{\xxx{Department}}
 
 \def\Supervisor{\xxx{Supername Supersurname}}
 \def\SupervisorsDepartment{\xxx{department}}
@@ -41,8 +63,7 @@ Dedication. \xxx{It is nice to say thanks to supervisors, friends, family, book 
 \def\InfoPageFont{}
 %\def\InfoPageFont{\small}  %uncomment to decrease font size
 
-\ifEN\iffalse\else\iftrue\fi %this line is an ugly hack
-
+\ifEN\relax\else
 % If you are writing a czech thesis, you additionally need to fill in the
 % english translation of the metadata here!
 \def\ThesisTitleEN{\xxx{Thesis title in English}}
@@ -57,5 +78,4 @@ Dedication. \xxx{It is nice to say thanks to supervisors, friends, family, book 
 \def\KeywordsEN{%
 \xxx{{key} {words}}
 }
-
-\fi %hack ends here
+\fi

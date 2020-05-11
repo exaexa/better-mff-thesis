@@ -4,23 +4,25 @@
 \hypersetup{pageanchor=false}
 \begin{center}
 
+\ifMFF
 \ifEN
 \centerline{\mbox{\includegraphics[width=166mm]{img/logo-en.pdf}}}
 \else
 \centerline{\mbox{\includegraphics[width=166mm]{img/logo-cs.pdf}}}
 \fi
-
 \vspace{-8mm}
-\vfill
-
-
-\ifEN
-{\bf\Large BACHELOR THESIS}
 \else
-{\bf\Large BAKALÁŘSKÁ PRÁCE}
+{\large\noindent\UKName\par\medskip\par\UKFaculty }
 \fi
+\vfill
+
+{\bf\Large\ThesisTypeName}
 
 \vfill
+
+\ifMFF\relax\else\includegraphics[width=70mm]{img/uklogo.pdf}
+
+\vfill\fi
 
 {\LARGE\ThesisAuthor}
 
@@ -36,7 +38,8 @@
 
 {
 \centerline{\vbox{\halign{\hbox to 0.45\hsize{\hfil #}&\hskip 0.5em\parbox[t]{0.45\hsize}{\raggedright #}\cr
-\ifEN Supervisor of the bachelor thesis: \else Vedoucí bakalářské práce: \fi
+\ifEN Supervisor of the \SupervisedThesisName thesis:
+\else Vedoucí \SupervisedThesisName práce: \fi
 & \Supervisor \cr
 \noalign{\vspace{2mm}}
 \ifEN Study programme: \else Studijní program: \fi
@@ -55,9 +58,7 @@
 
 \newpage
 
-
 % remember to sign this!
-
 \openright
 \hypersetup{pageanchor=true}
 \pagestyle{plain}
@@ -145,8 +146,7 @@ V \hbox to 6em{\dotfill} dne \hbox to 6em{\dotfill}
 \ifEN Keywords: \else Klíčová slova: \fi
 \Keywords
 
-% ugly hack strikes again
-\vss}\ifEN\iffalse\else\iftrue\fi\nobreak\vbox to 0.49\vsize{\InfoPageFont
+\vss}\ifEN\relax\else\nobreak\vbox to 0.49\vsize{\InfoPageFont
 \setlength\parindent{0mm}
 \setlength\parskip{5mm}
 
