@@ -8,7 +8,7 @@ What's new:
 - less confusing directory structure
 - slightly more useful examples (figures, diagrams, tables, code listings)
 - autobuilding of abstract PDF/A from metadata
-- university-wide variants of the front page
+- university-wide variants of the front page (nature faculty&bioinformatics!)
 - Czech localization with nicely named references
 
 See the [pre-built version](build/thesis.pdf) for details
