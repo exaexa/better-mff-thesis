@@ -15,10 +15,26 @@
 %
 %\usepackage[textwidth=145mm,textheight=247mm]{geometry}
 
-% font for typesetting (choose one)
-%\usepackage{lmodern} % TeX "original" (popular in math)
+
+%%% FONTS %%%
+\usepackage{lmodern} % TeX "original" (this sets up the latin mono)
+
+% Optionally choose an override for the main font for typesetting
 \usepackage[mono=false]{libertinus} % popular for comp-sci (ACM uses this)
 %\usepackage{tgschola} % Schoolbook-like (gives a bit of historic feel)
+%\usepackage[scale=0.96]{tgpagella} % Palladio-like (popular in formal logic).
+
+% Optionally choose a custom sans-serif fonts (e.g. for figures and tables).
+% Default sans-serif font is usually Computer Modern Sans; some font packages
+% (e.g. libertinus) replace that with a better matching sans-serif font.
+%\usepackage{tgheros} % recommended and very readable (Helvetica-like)
+%\usepackage{FiraSans} % looks great
+% DO NOT typeset the main text in sans-serif font!
+% Serifs make the text readable.
+
+% IMPORTANT FONT NOTE: Some font requires additional PDF/A conversion by
+% pdfa.sh. These include: tgpagella
+
 
 % some extra packages
 \usepackage{amsmath,amsfonts,amsthm,bm}

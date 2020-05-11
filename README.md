@@ -1,18 +1,21 @@
 
-# A slightly improved bachelor thesis template
+# A slightly improved thesis template
 
-- modern packages
-- modern fonts
+What's new:
+
+- modern packages (biblatex, cleveref, font choices)
+- useful hints and some example typesetting
 - less confusing directory structure
 - slightly more useful examples (figures, diagrams, tables, code listings)
-- Czech version has correctly named references
-- builds abstracts
+- autobuilding of abstract PDF/A from metadata
+- university-wide variants of the front page
+- Czech localization with nicely named references
 
 See the [pre-built version](build/thesis.pdf) for details
 
 ## How-to
 
-1. Type `make`, check that everything compiles. You should get a `thesis.pdf` that passes PDF-A validation. If not, complain.
+1. Type `make`, check that everything compiles. You should get a `thesis.pdf` that passes the PDF/A validation. If not, complain.
 2. Fill in `metadata.tex` and all `xmpdata` files.
 3. Look at the example code (there are several hints), remember it, erase it.
 4. Write the thesis.
