@@ -1,11 +1,11 @@
 \chapter{More complicated chapter}
 \label{chap:math}
 
-After the reader gained sufficient knowledge in \cref{chap:refs}, you can jump to your own material and conclusions.
+After the has reader gained sufficient knowledge to understand your problem in \cref{chap:refs}, you can jump to your own advanced material and conclusions.
 
-You will need definitions (see \cref{defn:x} below in \cref{sec:demo}), theorems (\cref{thm:y}), general mathematics, algorithms (\cref{alg:w}), and tables (\cref{tab:z})\todo{See documentation of package \texttt{booktabs} for hints on typesetting tables. As a main rule, \emph{never} draw a vertical line.}. \Cref{fig:f,fig:g} show how to make a nice figure. See \cref{fig:schema} for an example of TikZ-based diagram.
+You will need definitions (see \cref{defn:x} below in \cref{sec:demo}), theorems (\cref{thm:y}), general mathematics, algorithms (\cref{alg:w}), and tables (\cref{tab:z})\todo{See documentation of package \texttt{booktabs} for hints on typesetting tables. As a main rule, \emph{never} draw a vertical line.}. \Cref{fig:f,fig:g} show how to make a nice figure. See \cref{fig:schema} for an example of TikZ-based diagram. Cross-referencing helps a lot to keep the necessary parts of the narrative close --- use references to the previous chapter with theory wherever it seems that the reader could have forgotten the required context.
 
-\section{Some mathematics}
+\section{Example with some mathematics}
 \label{sec:demo}
 
 \begin{defn}[Triplet]\label{defn:x}
@@ -74,14 +74,26 @@ Asd qsd 1sd & DIFFERENT & 234234234 & (no data) \\
 \begin{algorithmic}
 \Function{ExecuteWithHighProbability}{$A$}
 	\State $r \gets$ a random number between $0$ and $1$
-	\State $\epsilon \gets 0.00000000001$
-	\If{$r\geq\epsilon$}
+	\State $\varepsilon \gets 0.0000000000000000000000000000000000000042$
+	\If{$r\geq\varepsilon$}
 		\State execute $A$ \Comment{We discard the return value}
 	\Else
 		\State print: \texttt{Not today, sorry.}
 	\EndIf
 \EndFunction
 \end{algorithmic}
-\caption{Algorithm that executes an action with high probability.}
+\caption{Algorithm that executes an action with high probability. Do not care about formal semantics in the pseudocode --- semicolons, types, correct function call parameters and similar nonsense from `realistic' languages can be safely omitted. Instead make sure that the intuition behind (and perhaps some hints about its correctness or various corner cases) can be seen as easily as possible.}
 \label{alg:w}
 \end{algorithm}
+
+\section{Extra typesetting hints}
+
+Do not overuse text formatting for highlighting various more or less parts of your sentences; if an idea cannot be communicated without formatting, the sentence probably needs rewriting anyway.
+
+Most importantly, do \underline{not} overuse bold text, which is designed to literally \textbf{shine from the page} to be the first thing that catches the eye of the reader. More precisely, use bold text only for `navigation' elements that need to be seen first, such as headings, list item names, and figure numbers.
+
+Use underline only in dire necessity, such as in the previous paragraph where it was inevitable to ensure that the reader remembers to never typeset boldface text manually again.
+
+Use \emph{emphasis} to highlight the first occurrences of important terms that the reader should notice. The feeling the emphasis produces is, roughly, ``Oh my --- what a nicely slanted word! Surely I expect it be important for the rest of the thesis!''
+
+Finally, never draw a vertical line (e.g., in a table or around figures), ever. Vertical lines outside of the figures are ugly.
