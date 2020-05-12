@@ -4,9 +4,8 @@
 What's new:
 
 - modern packages (biblatex, cleveref, better fonts)
-- some useful goodies
 - less confusing directory structure
-- slightly more useful examples (figures, diagrams, tables, code listings)
+- slightly more useful examples (figures, diagrams, tables, code listings), structure hints, some goodies
 - autobuilding of abstract PDF/A from metadata
 - university-wide variants of the front page (nature faculty&bioinformatics!)
 - Czech localization with nicely named references
