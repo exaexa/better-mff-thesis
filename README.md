@@ -44,6 +44,8 @@ Pull requests welcome.
 
 ## License?
 
-Everything in this repository is released into the public domain, not encumbered by any kind of copyright at all.
-
 Parts of the code (esp. the title page) are based on the original template (available from the faculty website) by Martin Mareš, Arnošt Komárek, and Michal Kulich. (Thanks!)
+
+University and faculty logos are a property of the respective universities and faculties.
+
+Everything else in this repository is released into the public domain, not encumbered by any kind of copyright at all.
