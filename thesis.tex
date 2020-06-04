@@ -46,7 +46,11 @@
 \usepackage{float}
 
 % load bibliography tools
-\usepackage[backend=bibtex,natbib]{biblatex}
+\usepackage[backend=bibtex,natbib,style=numeric]{biblatex}
+% alternative with alphanumeric citations (more informative than plain numbers):
+%\usepackage[backend=bibtex,natbib,style=alphabetic]{biblatex}
+
+% load the file with bibliography entries
 \addbibresource{refs}
 
 % remove this if you won't use fancy verbatim environments
