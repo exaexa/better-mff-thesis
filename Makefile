@@ -1,16 +1,25 @@
-PDFS=thesis.pdf abstract-en.pdf abstract-cz.pdf
+NAME=thesis
+ABSTRACT=abstract
+REFS=refs.bib
+
+TEX=pdflatex #possibly switch to lualatex/xelatex
+BIB=bibtex #possibly switch to biber (remove backend=bibtex from biblatex opts)
+
+RMF=rm -f
+
+PDFS=$(NAME).pdf $(ABSTRACT)-en.pdf $(ABSTRACT)-cz.pdf
 
 all: $(PDFS)
 
-thesis.pdf: thesis.tex $(wildcard *.tex) refs.bib thesis.xmpdata
-	pdflatex $<
-	bibtex thesis
-	pdflatex $<
-	pdflatex $<
+$(NAME).pdf: $(wildcard *.tex) $(REFS) $(NAME).xmpdata
+	$(TEX) $(NAME)
+	$(BIB) $(NAME)
+	$(TEX) $(NAME)
+	$(TEX) $(NAME)
 
-abstract-%.pdf: abstract-%.tex abstract-%.xmpdata metadata.tex
-	pdflatex $<
+$(ABSTRACT)-%.pdf: $(ABSTRACT)-%.tex $(ABSTRACT)-%.xmpdata metadata.tex
+	$(TEX) $<
 
 clean:
-	rm -f *.log *.dvi *.aux *.toc *.lof *.lot *.out *.bbl *.blg *.xmpi
-	rm -f $(PDFS)
+	$(RMF) *.log *.dvi *.aux *.toc *.lof *.lot *.out *.bbl *.blg *.xmpi
+	$(RMF) $(PDFS)
