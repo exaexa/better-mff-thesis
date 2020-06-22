@@ -20,11 +20,37 @@ See the [pre-built version](build/thesis.pdf) for details
 4. Write the thesis.
 5. Submit and defend the thesis.
 
+### Installing LaTeX
+
+LaTeX installation may be hard (especially on various substandard operating systems). On most BSD and GNU-style Linux distributions, it should be sufficient to install some random `texlive-*` packages (and add more if non-standard TeX functionality is required); see e.g. [a complete list for Debian](docker/Dockerfile).
+
+- For a single-user distribution on unix, use the provided [installation script](https://www.tug.org/texlive/quickinstall.html).
+- On windows, use [MiKTeX](https://www.tug.org/texlive/windows.html).
+- On Mac, use any suitable variant of [MacTeX](https://www.tug.org/mactex/).
+
+Optionally, you can use a Docker container with TeX. You can either build the image yourself from the supplied `Dockerfile`:
+```sh
+cd docker
+docker build -t exaexa/latex .
+```
+
+...or get a pre-built copy (which is usually much faster:
+![image size](https://img.shields.io/docker/image-size/exaexa/latex)
+)
+```sh
+docker pull exaexa/latex
+```
+
+After that, you should be able to compile the thesis using (roughly) this command:
+```sh
+docker run -u $UID -ti --rm -v $PWD:/th -w /th exaexa/latex make
+```
+
 ## PDF/A
 
-With a bit of luck, you should get PDF/A right out of LaTeX.
+With a bit of luck, you should get a valid PDF/A right out of LaTeX.
 
-A working PDF/A validator that can point out exact problems is here: https://github.com/mff-cuni-cz/cuni-thesis-validator
+A PDF/A validator that can point out exact problems is available here: https://github.com/mff-cuni-cz/cuni-thesis-validator
 
 Common PDF/A problems include:
 
