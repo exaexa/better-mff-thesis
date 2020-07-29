@@ -46,23 +46,34 @@
 \usepackage{float}
 
 % load bibliography tools
-\usepackage[backend=bibtex,natbib,style=numeric]{biblatex}
+\usepackage[backend=bibtex,natbib,style=numeric,sorting=none]{biblatex}
 % alternative with alphanumeric citations (more informative than numbers):
 %\usepackage[backend=bibtex,natbib,style=alphabetic]{biblatex}
 %
 % alternatives that conform to iso690
 % (iso690 is not formally required on MFF, but may help elsewhere):
-%\usepackage[backend=bibtex,natbib,style=iso-numeric]{biblatex}
+%\usepackage[backend=bibtex,natbib,style=iso-numeric,sorting=none]{biblatex}
 %\usepackage[backend=bibtex,natbib,style=iso-alphabetic]{biblatex}
 %
 % additional option choices:
 %  - add `giveninits=true` to typeset "E. A. Poe" instead of full Edgar Allan
+%  - `terseinits=true` additionaly shortens it to nature-like "Poe EA"
 %  - add `maxnames=10` to limit (or loosen) the maximum number of authors in
 %    bibliography entry before shortening to `et al.` (useful when referring to
 %    book collections that may have hundreds of authors)
 %  - for additional flexibility (e.g. multiple reference sections, etc.),
 %    remove `backend=bibtex` and compile with `biber` instead of `bibtex` (see
 %    Makefile)
+%  - `sorting=none` causes the bibliography list to be ordered by the order of
+%    citation as they appear in the text, which is usually the desired behavior
+%    with numeric citations. Additionally you can use a style like
+%    `numeric-comp` that compresses the long lists of citations such as
+%    [1,2,3,4,5,6,7,8] to simpler [1--8]. This is especially useful if you plan
+%    to add tremendous amounts of citations, as usual in life sciences and
+%    bioinformatics.
+%  - if you don't like the "In:" appearing in the bibliography, use the
+%    extended style (`ext-numeric` or `ext-alphabetic`), and add option
+%    `articlein=false`.
 %
 % possibly reverse the names of the authors with the default styles:
 %\DeclareNameAlias{default}{family-given}
