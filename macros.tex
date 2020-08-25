@@ -48,8 +48,14 @@
 \newcommand{\asy}[1]{\mathcal{O}(#1)}
 
 % listings and default lstlisting config (remove if unused)
-\floatstyle{ruled}
-\newfloat{listing}{tbp}{lst}
+\DeclareNewFloatType{listing}{}
+\floatsetup[listing]{style=ruled}
+
+\DeclareCaptionStyle{thesis}{style=base,font={small,sf},labelfont=bf,labelsep=quad}
+\captionsetup{style=thesis}
+\captionsetup[algorithm]{style=thesis,singlelinecheck=off}
+\captionsetup[listing]{style=thesis,singlelinecheck=off}
+
 \ifEN\floatname{listing}{Listing}
 \else\floatname{listing}{Výpis kódu}\fi
 \lstset{%
@@ -61,20 +67,6 @@
   commentstyle=\color{green!50!black},
   stringstyle=\color{red!50!black},
   keywordstyle=\color{blue!75!black}}
-
-% re-styling of the captions with the float package
-\makeatletter
-\newcommand\floatc@plainb[2]{\setbox\@tempboxa\hbox{{\@fs@cfont #1} #2}%
-\ifdim\wd\@tempboxa>\hsize {\@fs@cfont #1} #2\par
-\else\hbox to\hsize{\hfil\box\@tempboxa\hfil}\fi}
-\newcommand\fs@plainb{\def\@fs@cfont{\bfseries}\let\@fs@capt\floatc@plainb%
-\def\@fs@pre{}\def\@fs@post{}%
-\def\@fs@mid{\vspace\abovecaptionskip\relax}%
-\let\@fs@iftopcapt\iffalse}
-\makeatother
-\floatstyle{plainb}
-\restylefloat{table}
-\restylefloat{figure}
 
 % Czech versions of the used cleveref references (It's not as convenient as in
 % English because of declension, cleveref is limited to sg/pl nominative. Use
