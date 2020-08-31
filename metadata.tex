@@ -10,17 +10,23 @@
 
 \newif\ifMFF
 \MFFtrue % comment this out for the version with a big UK university logo
-\def\UKName{Charles University in Prague} %this is used in UK-logo-version
-
+\def\UKName{Charles University in Prague} %this is only used in UK-logo-version
 \def\UKFaculty{Faculty of Mathematics and Physics}
-\def\ThesisTypeName{\ifEN BACHELOR THESIS \else BAKALÁŘSKÁ PRÁCE \fi}
-%\def\ThesisTypeName{\ifEN MASTER THESIS \else DIPLOMOVÁ PRÁCE \fi}
-%\def\ThesisTypeName{\ifEN RIGOROUS THESIS \else RIGORÓZNÍ PRÁCE \fi}
-%\def\ThesisTypeName{\ifEN DOCTORAL THESIS \else DISERTAČNÍ PRÁCE \fi}
-\def\SupervisedThesisName{\ifEN bachelor \else bakalářské \fi}
-%\def\SupervisedThesisName{\ifEN master \else diplomové \fi}
-%\def\SupervisedThesisName{\ifEN rigorous \else rigorózní \fi}
-%\def\SupervisedThesisName{\ifEN doctoral \else disertační \fi}
+
+% Thesis type names, as used in several places in the title
+\def\ThesisTypeTitle{\ifEN BACHELOR THESIS \else BAKALÁŘSKÁ PRÁCE \fi}
+%\def\ThesisTypeTitle{\ifEN MASTER THESIS \else DIPLOMOVÁ PRÁCE \fi}
+%\def\ThesisTypeTitle{\ifEN RIGOROUS THESIS \else RIGORÓZNÍ PRÁCE \fi}
+%\def\ThesisTypeTitle{\ifEN DOCTORAL THESIS \else DISERTAČNÍ PRÁCE \fi}
+\def\ThesisGenitive{\ifEN bachelor \else bakalářské \fi}
+%\def\ThesisGenitive{\ifEN master \else diplomové \fi}
+%\def\ThesisGenitive{\ifEN rigorous \else rigorózní \fi}
+%\def\ThesisGenitive{\ifEN doctoral \else disertační \fi}
+\def\ThesisAccusative{\ifEN bachelor \else bakalářskou \fi}
+%\def\ThesisAccusative{\ifEN master \else diplomovou \fi}
+%\def\ThesisAccusative{\ifEN rigorous \else rigorózní \fi}
+%\def\ThesisAccusative{\ifEN doctoral \else disertační \fi}
+
 
 
 %%% Fill in your details %%%
