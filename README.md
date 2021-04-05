@@ -9,8 +9,14 @@ What's new:
 - autobuilding of abstract PDF/A from metadata
 - university-wide variants of the front page (nature faculty&bioinformatics!)
 - Czech localization with nicely named references
+- Dockerized environment
 
 See the [pre-built version](build/thesis.pdf) for details
+
+## CI configuration
+
+The repository contains valid configuration for both *GitLab* CI and the *GitHub* actions.
+No matter what GIT hosting you use, you can always download latest version of your thesis right from the artifacts!
 
 ## How-to
 

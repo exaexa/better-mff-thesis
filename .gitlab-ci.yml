@@ -1,0 +1,15 @@
+#
+# This GitLab CI configuration builds the thesis on each push
+# The thesis is stored as an repository artifact
+#
+# It works with the gitlab.mff.cuni.cz instance.
+#
+image: exaexa/latex
+
+build:
+  script: make
+  artifacts:
+    paths:
+      - thesis.pdf
+      - abstract-cz.pdf
+      - abstract-en.pdf
