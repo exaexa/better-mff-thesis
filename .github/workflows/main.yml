@@ -17,14 +17,14 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    container: { image: 'exaexa/latex' }
+    container: { image: 'aergus/latex' }
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Build the thesis
-        run: make
+        run: latexmk thesis && latexmk abstract-cz && latexmk abstract-en
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
