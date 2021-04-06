@@ -4,10 +4,10 @@
 #
 # It works with the gitlab.mff.cuni.cz instance.
 #
-image: exaexa/latex
+image: aergus/latex
 
 build:
-  script: make
+  script: latexmk thesis && latexmk abstract-cz && latexmk abstract-en;
   artifacts:
     paths:
       - thesis.pdf
