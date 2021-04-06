@@ -6,10 +6,10 @@ What's new:
 - modern packages (biblatex, cleveref, better fonts)
 - less confusing directory structure
 - slightly more useful examples (figures, diagrams, tables, code listings), structure hints, some goodies
-- autobuilding of abstract PDF/A from metadata
-- university-wide variants of the front page (nature faculty&bioinformatics!)
+- autobuilding of abstract PDF/A files from metadata
+- multiple variants of the front page (nature faculty&bioinformatics!)
 - Czech localization with nicely named references
-- Dockerized environment
+- Dockerized & CI build options
 
 See the [pre-built version](build/thesis.pdf) for details
 
