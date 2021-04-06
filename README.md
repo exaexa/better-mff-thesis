@@ -65,9 +65,9 @@ Common PDF/A problems include:
 
 Solutions:
 
-- use `pdfa.sh` to convert PDFs to PDF/A-compatible form the "hard way" (although this does _not_ retain the PDF/A metadata mark, see comments in the script).
+- use `pdfa.sh` to convert the imported picture PDFs to PDF/A-compatible form the "hard way" (although this does _not_ retain the PDF/A metadata mark, see comments in the script)
 - read the commentary by Martin Mareš (that describes most of the common problems) here: https://mj.ucw.cz/vyuka/bc/pdfaq.html
-- use `pdfa.sh` as a last resort for `thesis.pdf` if everything other fails
+- as a last resort if everything other fails, use `pdfa.sh` for the whole `thesis.pdf`
 
 ## Ideas/improvements/more examples?
 
