@@ -3,6 +3,8 @@
 *.bcf
 *.blg
 *.dvi
+*.fdb_latexmk
+*.fls
 *.idx
 *.ilg
 *.ind
