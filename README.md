@@ -37,19 +37,19 @@ LaTeX installation may be hard (especially on various substandard operating syst
 Optionally, you can use a Docker container with TeX. You can either build the image yourself from the supplied `Dockerfile`:
 ```sh
 cd docker
-docker build -t exaexa/latex .
+docker build -t betterthesis/latex .
 ```
 
-...or get a pre-built copy (which is usually much faster:
-![image size](https://img.shields.io/docker/image-size/exaexa/latex)
+...or get some pre-built one (which is usually much faster:
+![image size](https://img.shields.io/docker/image-size/aergus/latex)
 )
 ```sh
-docker pull exaexa/latex
+docker pull aergus/latex
 ```
 
-After that, you should be able to compile the thesis using (roughly) this command:
+After that, you should be able to compile the thesis using this command (change the container name to `betterthesis/latex` in case you built it yourself):
 ```sh
-docker run -u $UID -ti --rm -v $PWD:/th -w /th exaexa/latex make
+docker run -u $UID -ti --rm -v $PWD:/th -w /th aergus/latex make
 ```
 
 ## PDF/A
