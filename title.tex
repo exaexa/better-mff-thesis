@@ -4,35 +4,40 @@
 \hypersetup{pageanchor=false}
 \begin{center}
 
-\ifMFF
-\ifEN
-\centerline{\mbox{\includegraphics[width=166mm]{img/logo-en.pdf}}}
-\else
-\centerline{\mbox{\includegraphics[width=166mm]{img/logo-cs.pdf}}}
-\fi
-\vspace{-8mm}
-\else
-{\large\noindent\UKName\par\medskip\par\UKFaculty }
-\fi
-\vfill
+% top part of the layout, this actually differs between faculties
 
-{\bf\Large\ThesisTypeTitle}
+\def\ThesisTitleXmff{%
+  \ifEN
+    \centerline{\mbox{\includegraphics[width=166mm]{img/logo-en.pdf}}}
+  \else
+    \centerline{\mbox{\includegraphics[width=166mm]{img/logo-cs.pdf}}}
+  \fi
+  \vspace{-8mm}\vfill%
+  {\bf\Large\ThesisTypeTitle}
+  \vfill%
+  {\LARGE\ThesisAuthor}\par
+  \vspace{15mm}%
+  {\LARGE\bfseries\ThesisTitle}
+  \vfill%
+  \Department}
+\def\ThesisTitleCuniLogo#1{%
+  {\large\UKName\par\medskip\par\UKFaculty }
+  \vfill%
+  {\bf\Large\ThesisTypeTitle}
+  \vfill%
+  \includegraphics[width=70mm]{#1}
+  \vfill%
+  {\LARGE\ThesisAuthor}\par
+  \vspace{15mm}%
+  {\LARGE\bfseries\ThesisTitle}
+  \vfill%
+  \Department\par}
+\def\ThesisTitleXcuni{\ThesisTitleCuniLogo{img/uklogo.pdf}}
+\def\ThesisTitleXnatur{\ThesisTitleCuniLogo{img/naturlogo.pdf}}
 
-\vfill
-
-\ifMFF\relax\else\includegraphics[width=70mm]{img/uklogo.pdf}
-
-\vfill\fi
-
-{\LARGE\ThesisAuthor}
-
-\vspace{15mm}
-
-{\LARGE\bfseries\ThesisTitle}
-
-\vfill
-
-\Department
+% choose the correct page and print it
+\csname ThesisTitleX\ThesisTitleStyle\endcsname
+% latex corner: X is the new @
 
 \vfill
 
