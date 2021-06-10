@@ -8,10 +8,14 @@
 
 %%% Configuration of the title page %%%
 
-\newif\ifMFF
-\MFFtrue % comment this out for the version with a big UK university logo
-\def\UKName{Charles University in Prague} %this is only used in UK-logo-version
+\def\ThesisTitleStyle{mff} % MFF style
+%\def\ThesisTitleStyle{cuni} % uncomment for old-style with cuni.cz logo
+%\def\ThesisTitleStyle{natur} % uncomment for nature faculty logo
+
 \def\UKFaculty{Faculty of Mathematics and Physics}
+%\def\UKFaculty{Faculty of Science}
+
+\def\UKName{Charles University in Prague} % this is not used in the "mff" style
 
 % Thesis type names, as used in several places in the title
 \def\ThesisTypeTitle{\ifEN BACHELOR THESIS \else BAKALÁŘSKÁ PRÁCE \fi}

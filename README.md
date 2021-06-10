@@ -5,9 +5,13 @@ What's new:
 
 - modern packages (biblatex, cleveref, better fonts)
 - less confusing directory structure
-- slightly more useful examples (figures, diagrams, tables, code listings), structure hints, some goodies
+- slightly more useful examples (figures, diagrams, tables, code listings),
+  structure hints, some goodies
 - autobuilding of abstract PDF/A files from metadata
-- multiple variants of the front page (nature faculty&bioinformatics!)
+- multiple variants of the front page
+  - MFF with the new logo
+  - "traditional" UK variant
+  - Nature faculty & bioinformatics
 - Czech localization with nicely named references
 - Dockerized & CI build options
 
