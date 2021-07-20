@@ -14,6 +14,12 @@ gs -dPDFA=1 \
    -sOutputFile="pdfa-$1" \
    "$1"
 
-# note: PDFACompatibilityPolicy=3 actually doesn't exist. A bug in ghostscript
+# Notes:
+#
+# PDFACompatibilityPolicy=3 actually doesn't exist. A bug in ghostscript
 # interprets is as something between 1 and 2, without unnecessary failing on
 # various dumb errors.
+#
+# Add -dNoOutputFonts if you absolutely totally need to get rid of fonts in a
+# figure PDF. Do not do that for the whole thesis though-- a thesis with
+# removed font glyphs is not submittable!
