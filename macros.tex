@@ -55,11 +55,29 @@
 \captionsetup{style=thesis}
 \captionsetup[algorithm]{style=thesis,singlelinecheck=off}
 \captionsetup[listing]{style=thesis,singlelinecheck=off}
-\floatsetup[table]{capposition=top,framefit=yes}
+
+% Uncomment for table captions on top. This is sometimes recommended by the
+% style guide, and even required for some publication types.
+%\floatsetup[table]{capposition=top}
+%
+% (Opinionated rant:) Captions on top are not "compatible" with the general
+% guideline that the tables should be formatted to be quickly visually
+% comprehensible and *beautiful* in general (like figures), and that the table
+% "head" row (with column names) should alone communicate most of the content
+% and interpretation of the table. If you just need to show a long boring list
+% of numbers (because you have to), either put some effort into showing the
+% data in an attractive figure-table, or move the data to an attachment and
+% refer to it, so that the boredom does not impact the main text flow.
+%
+% You can make the top-captions look much less ugly by aligning the widths of
+% the caption and the table, with setting `framefit=yes`, as shown below.  This
+% additionally requires some extra markup in your {table} environments; see the
+% comments in the example table in `ch2.tex` for details.
+%\floatsetup[table]{capposition=top,framefit=yes}
 
 \ifEN\floatname{listing}{Listing}
 \else\floatname{listing}{Výpis kódu}\fi
-\lstset{%
+\lstset{ % use this to define styling for any other language
   language=C++,
   tabsize=2,
   showstringspaces=false,

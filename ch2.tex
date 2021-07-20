@@ -24,8 +24,10 @@ Use induction on sets of cars $C$. The statement holds trivially for $|C|\leq1$.
 \end{proof}
 
 \begin{table}
-\floatbox{table}[\FBwidth]
-{\centering\footnotesize\sf
+% uncomment the following line if you use the fitted top captions for tables
+% (see the \floatsetup[table] comments in `macros.tex`.
+%\floatbox{table}[\FBwidth]{
+\centering\footnotesize\sf
 \begin{tabular}{llrl}
 \toprule
 Column A & Column 2 & Numbers & More \\
@@ -40,8 +42,10 @@ Asd qsd 1sd & \textcolor{green!80!black}{GOOD} & 234234299 & -- \\
 Asd & NUMBER & \textbf{123123} & -- \\
 Asd qsd 1sd & DIFFERENT & 234234234 & (no data) \\
 \bottomrule
-\end{tabular}}
-{\caption{An example table. Table caption should clearly explain how to interpret the data in the table. Use some visual guide, such as boldface or color coding, to highlight the most important results (e.g., comparison winners).}}
+\end{tabular}
+%}{  % uncomment if you use the \floatbox (as above), erase otherwise
+\caption{An example table.  Table caption should clearly explain how to interpret the data in the table. Use some visual guide, such as boldface or color coding, to highlight the most important results (e.g., comparison winners).}
+%}  % uncomment if you use the \floatbox
 \label{tab:z}
 \end{table}
 
