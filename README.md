@@ -58,7 +58,7 @@ docker run -u $UID -ti --rm -v $PWD:/th -w /th aergus/latex make
 
 ## PDF/A
 
-With a bit of luck, you should get a valid PDF/A right out of LaTeX.
+With a bit of luck, you should get a valid PDF/A right out of LaTeX. If you are using GitHub actions or GitLab CI, the CI will run the PDF/A verifier automatically for you.
 
 A PDF/A validator that can point out exact problems is available here: https://github.com/mff-cuni-cz/cuni-thesis-validator
 
