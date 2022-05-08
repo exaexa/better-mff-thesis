@@ -4,12 +4,24 @@
 #
 # It works with the gitlab.mff.cuni.cz instance.
 #
-image: aergus/latex
 
-build:
-  script: latexmk thesis && latexmk abstract-cz && latexmk abstract-en;
+stages:
+  - build
+  - verify
+
+latexmk:
+  stage: build
+  image: aergus/latex
+  script: |
+    latexmk thesis && latexmk abstract-cz && latexmk abstract-en;
   artifacts:
     paths:
       - thesis.pdf
       - abstract-cz.pdf
       - abstract-en.pdf
+
+verapdf:
+  stage: verify
+  image: ghcr.io/exaexa/cuni-thesis-validator
+  script: |
+    verify *.pdf |tee /dev/stderr |grep -qE 'nonCompliant="0"'
