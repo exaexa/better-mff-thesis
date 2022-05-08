@@ -1,10 +1,7 @@
 name: CI
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
 
   workflow_dispatch:
 
@@ -19,7 +16,7 @@ jobs:
       - name: Build the thesis
         run: latexmk thesis && latexmk abstract-cz && latexmk abstract-en
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Thesis
           path: |
@@ -32,6 +29,7 @@ jobs:
     container: { image: 'ghcr.io/mff-cuni-cz/cuni-thesis-validator' }
 
     steps:
+      - name: Get PDFs
+        uses: actions/download-artifact@v3
       - name: Run VeraPDF
-        run: >
-          verify *.pdf | tee /dev/stderr | grep -qE 'nonCompliant="0"'
+        run: verify Thesis/*.pdf | tee /dev/stderr | grep -qE 'nonCompliant="0"'
