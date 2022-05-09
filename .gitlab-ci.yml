@@ -22,6 +22,6 @@ latexmk:
 
 verapdf:
   stage: verify
-  image: ghcr.io/exaexa/cuni-thesis-validator
+  image: ghcr.io/mff-cuni-cz/cuni-thesis-validator
   script: |
     verify *.pdf |tee /dev/stderr |grep -qE 'nonCompliant="0"'
