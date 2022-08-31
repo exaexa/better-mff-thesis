@@ -19,10 +19,13 @@
 %%% FONTS %%%
 \usepackage{lmodern} % TeX "original" (this sets up the latin mono)
 
-% Optionally choose an override for the main font for typesetting
+% Optionally choose an override for the main font for typesetting:
 \usepackage[mono=false]{libertinus} % popular for comp-sci (ACM uses this)
 %\usepackage{tgschola} % Schoolbook-like (gives a bit of historic feel)
 %\usepackage[scale=0.96]{tgpagella} % Palladio-like (popular in formal logic).
+% IBM Plex font suite is nice but requires us to fine-tune the sizes, also note
+% that it does not directly support small caps (\textsc) and requires lualatex:
+%\usepackage[usefilenames,RM={Scale=0.88},SS={Scale=0.88},SScon={Scale=0.88},TT={Scale=0.88},DefaultFeatures={Ligatures=Common}]{plex-otf}
 
 % Optionally choose a custom sans-serif fonts (e.g. for figures and tables).
 % Default sans-serif font is usually Latin Modern Sans. Some font packages
