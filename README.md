@@ -15,7 +15,7 @@ What's new:
 - Czech localization with nicely named references
 - Dockerized & CI build options
 
-See the [pre-built version](build/thesis.pdf) for details
+See the [pre-built version](https://exaexa.github.io/better-mff-thesis/thesis.pdf) for details.
 
 ## CI configuration
 
