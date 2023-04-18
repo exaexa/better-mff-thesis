@@ -6,33 +6,35 @@ What's new:
 - modern packages (biblatex, cleveref, better fonts)
 - less confusing directory structure
 - slightly more useful examples (figures, diagrams, tables, code listings),
-  structure hints, some goodies
-- autobuilding of abstract PDF/A files from metadata
+  structure&writing hints, some goodies
+- autobuilding of PDF/A abstracts directly from metadata
 - multiple variants of the front page
   - MFF with the new logo
   - "traditional" UK variant
   - Nature faculty & bioinformatics
-- Czech localization with nicely named references
-- Dockerized & CI build options
+- Czech localization with properly translated references
+- Automated docker-based & CI build options
 
 See the [pre-built version](https://exaexa.github.io/better-mff-thesis/thesis.pdf) for details.
 
 ## CI configuration
 
 The repository contains valid configuration for both *GitLab* CI and the *GitHub* actions.
-No matter what GIT hosting you use, you can always download latest version of your thesis right from the artifacts!
+No matter what Git hosting you use, you can always download latest version of your thesis right from the artifacts!
+The GitHub version additionally pushes the files to GitHub pages to enabler easier sharing (incl. the link above); you can disable that by removing `.github/workflow/pages.yml`.
 
 ## How-to
 
-1. Type `make`, check that everything compiles. You should get a `thesis.pdf` that passes the PDF/A validation. If not, complain.
+1. Type `make`, check that everything compiles. You should get a `thesis.pdf` that passes the [PDF/A validation](https://github.com/mff-cuni-cz/cuni-thesis-validator). If not, complain.
 2. Fill in `metadata.tex` and all `xmpdata` files.
-3. Look at the example code (there are several hints), remember it, erase it.
+3. Look at the example code (there is plenty of advice to follow), then erase it.
 4. Write the thesis.
 5. Submit and defend the thesis.
 
 ### Installing LaTeX
 
-LaTeX installation may be hard (especially on various substandard operating systems). On most BSD and GNU-style Linux distributions, it should be sufficient to install some random `texlive-*` packages (and add more if non-standard TeX functionality is required); see e.g. [a complete list for Debian](docker/Dockerfile).
+LaTeX installation may be hard (especially on various substandard operating systems).
+On most BSD and GNU-style Linux distributions, it should be sufficient to install some random `texlive-*` packages (and add more if non-standard TeX functionality is required); see e.g. [a complete list for Debian](docker/Dockerfile).
 
 - For a single-user distribution on unix, use the provided [installation script](https://www.tug.org/texlive/quickinstall.html).
 - On windows, use [MiKTeX](https://www.tug.org/texlive/windows.html).
@@ -79,7 +81,9 @@ Pull requests welcome.
 
 ## License?
 
-Parts of the code (esp. the title page) are based on the original template (available from the faculty website) by Martin Mareš, Arnošt Komárek, and Michal Kulich. Small and useful fixes were coded or pointed out by Vít Kabele, Jan Joneš, Gabriela Suchopárová, Evžen Wybitul, and many others. (Many thanks to everyone involved!)
+Parts of the code (esp. the title page) are based on the original template (available from the faculty website) by Martin Mareš, Arnošt Komárek, and Michal Kulich.
+Small and useful fixes were coded or pointed out by Vít Kabele, Jan Joneš, Gabriela Suchopárová, Evžen Wybitul, and many others.
+(Many thanks to everyone involved!)
 
 University and faculty logos are a property of the respective universities and faculties.
 
