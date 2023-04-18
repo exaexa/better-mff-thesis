@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build thesis PDFs and push them to pages
+    runs-on: ubuntu-latest
+    container: { image: 'aergus/latex' }
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the thesis
+        run: latexmk thesis && latexmk abstract-cz && latexmk abstract-en
+      - name: Prepare a website directory
+        run: |
+          mkdir -p public
+          cp -v thesis.pdf public
+          cp -v abstract-*.pdf public
+      - name: Upload to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          GIT_WORK_TREE=. git checkout --orphan gh-pages
+          GIT_WORK_TREE=. git add .
+          GIT_WORK_TREE=. git commit -m 'pages'
+          git push --force --set-upstream origin gh-pages
