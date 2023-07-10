@@ -17,6 +17,7 @@ RUN apt-get -qq update && apt-get install -y \
   texlive-science \
   texlive \
   ghostscript \
+  latexmk \
   make
 
 RUN rm -fr /var/lib/apt /var/cache/apt
