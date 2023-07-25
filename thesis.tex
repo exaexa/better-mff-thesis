@@ -49,25 +49,33 @@
 \usepackage{caption}
 \usepackage{floatrow}
 
-% load bibliography tools
-\usepackage[backend=bibtex,natbib,style=numeric,sorting=none]{biblatex}
-% alternative with alphanumeric citations (more informative than numbers):
-%\usepackage[backend=bibtex,natbib,style=alphabetic]{biblatex}
+% Bibliography formatting.
+% CHECK THE REQUIREMENTS OF YOUR DEPARTMENT AND FACULTY ON THE CITATION FORMAT!
 %
-% alternatives that conform to iso690
-% (iso690 is not formally required on MFF, but may help elsewhere):
-%\usepackage[backend=bibtex,natbib,style=iso-numeric,sorting=none]{biblatex}
-%\usepackage[backend=bibtex,natbib,style=iso-alphabetic]{biblatex}
+% These are relatively "safe" default options that most people use:
+\usepackage[natbib,style=numeric,sorting=none]{biblatex}
+% alternative with alphanumeric citations (more informative than numbers, and
+% more common in computer science journals):
+%\usepackage[natbib,style=alphabetic]{biblatex}
 %
-% additional option choices:
+% ALTERNATIVES THAT CONFORM TO ISO690
+% ISO690 is not the greatest citation format ever, but may be formally
+% required at Charles University, depending on your faculty and department.
+%\usepackage[natbib,style=iso-numeric,sorting=none]{biblatex}
+%\usepackage[natbib,style=iso-alphabetic]{biblatex}
+% You might want to add extra options such as `maxbibnames=6,maxcitenames=2`
+% here to further conform to some of the formatting requirements (see below for
+% details). Again, consult your faculty rules.
+%
+% Additional option choices:
 %  - add `giveninits=true` to typeset "E. A. Poe" instead of full Edgar Allan
 %  - `terseinits=true` additionaly shortens it to nature-like "Poe EA"
 %  - add `maxnames=10` to limit (or loosen) the maximum number of authors in
 %    bibliography entry before shortening to `et al.` (useful when referring to
 %    book collections that may have hundreds of authors)
-%  - for additional flexibility (e.g. multiple reference sections, etc.),
-%    remove `backend=bibtex` and compile with `biber` instead of `bibtex` (see
-%    Makefile)
+%  - use `maxcitenames=2` to finetune the amount of authors listed in text-cite
+%    commands (\citet). Corresponding option that only affects the bibliography
+%    is `maxbibnames=10`.
 %  - `sorting=none` causes the bibliography list to be ordered by the order of
 %    citation as they appear in the text, which is usually the desired behavior
 %    with numeric citations. Additionally you can use a style like
@@ -83,7 +91,7 @@
 %\DeclareNameAlias{default}{family-given}
 
 % load the file with bibliography entries
-\addbibresource{refs}
+\addbibresource{refs.bib}
 
 % remove this if you won't use fancy verbatim environments
 \usepackage{fancyvrb}
