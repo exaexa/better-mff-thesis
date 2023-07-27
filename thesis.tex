@@ -14,31 +14,24 @@
 % The official recommendation expands the area quite a bit (looks pretty harsh):
 %\usepackage[textwidth=145mm,textheight=247mm]{geometry}
 
-%%% FONTS %%%
-\usepackage{lmodern} % TeX "original" (this sets up the latin mono)
+%%% TYPICAL FONT CHOICES (uncomment what you like) %%%
+% Recommended combo: Libertinus (autoselects Biolinum for sans) and everything
+% else (math+tt) comes from Latin Modern)
+\usepackage{lmodern}
+\usepackage[mono=false]{libertinus}
 
-% Optionally choose an override for the main font for typesetting:
-\usepackage[mono=false]{libertinus} % popular for comp-sci (ACM uses this)
-%\usepackage{tgschola} % Schoolbook-like (gives a bit of historic feel)
-%\usepackage[scale=0.96]{tgpagella} % Palladio-like (popular in formal logic).
-% IBM Plex font suite is nice but requires us to fine-tune the sizes, also note
-% that it does not directly support small caps (\textsc) and requires lualatex:
+% For the "classic" LaTeX fonts (very good for pure math theses), simply
+% comment out the libertinus package above.
+
+% IBM Plex font suite: nice, but requires us to fine-tune the sizes and does
+% not directly support small caps (\textsc):
 %\usepackage[usefilenames,RM={Scale=0.88},SS={Scale=0.88},SScon={Scale=0.88},TT={Scale=0.88},DefaultFeatures={Ligatures=Common}]{plex-otf}
 
-% Optionally, choose a custom sans-serif fonts (e.g. for figures and tables).
-% Default sans-serif font is usually Latin Modern Sans. Some font packages
-% (e.g. libertinus) replace that with a better matching sans-serif font.
-%\usepackage{tgheros} % recommended and very readable (Helvetica-like)
-%\usepackage{FiraSans} % looks great
-% DO NOT typeset the main text in sans-serif font!
-% The serifs make the text easily readable on the paper.
-
-
-% IMPORTANT FONT NOTE: Some fonts require additional PDF/A conversion using
-% the pdfa.sh script. These currently include only 'tgpagella'; but various
-% other fonts from the texlive distribution need that too (mainly the Droid
-% font family).
-
+% TeX Gyre combo (Pagella+Heros+Cursor)
+%\usepackage{fontspec}
+%\setmainfont{TeX Gyre Pagella}
+%\setsansfont{TeX Gyre Heros}
+%\setmonofont{TeX Gyre Cursor}
 
 % some useful packages
 \usepackage{microtype}
