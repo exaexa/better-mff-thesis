@@ -60,7 +60,7 @@ docker run -u $UID -ti --rm -v $PWD:/th -w /th aergus/latex make
 
 ## PDF/A
 
-With a bit of luck, you should get a valid PDF/A right out of LaTeX. If you are using GitHub actions or GitLab CI, the CI will run the PDF/A verifier automatically for you.
+With a bit of luck, you should get a valid PDF/A right out of LaTeX. Remember that you should use a well-maintained PDF-capable TeX engine, which currently means `lualatex` and may possibly also include `xelatex`. Older `pdflatex` might work, but you may hit problems (e.g. using "small caps" feature with the default Libertinus font triggers glyph validation errors). If you are using GitHub actions or GitLab CI, the CI will run the PDF/A verifier automatically for you.
 
 A PDF/A validator that can point out exact problems is available here: https://github.com/mff-cuni-cz/cuni-thesis-validator
 

@@ -1,6 +1,6 @@
 NAME=thesis
 ABSTRACT=abstract
-LATEXMKOPTS=-pdflua #force lualatex
+LATEXMKOPTS=-pdflua #you can also use -pdf for forcing pdflatex, if required
 LATEXMK=latexmk $(LATEXMKOPTS)
 
 all:
