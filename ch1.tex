@@ -1,5 +1,57 @@
-\chapter{Important first chapter}
+\chapter{Introduction to thesis writing}
 \label{chap:refs}
+
+\section{So you have to do a thesis?}
+
+% this section is translated from https://e-x-a.org/rp/ (thx to Jiri Benes)
+
+If you are reading this, you likely have to write a thesis to finish your Bachelor or Master studies. First, congratulations on getting this far! What is a thesis though?
+
+Thesis is a monograph, a longer writing about a given single topic of choice. The topic is typically implied by your studies --- at the school of computer science, you will write about solving a problem with computers; at medicinal school you will write about an issue about health or anatomy, etc. To create the thesis, you typically proceed as follows:
+\begin{enumerate}
+\item You conduct a moderate review of current (or recent) \emph{academic literature} on a specific topic,
+\item with the acquired knowledge, you solve a narrowly specialized and \emph{well-defined problem},
+\item through standard and \emph{reproducible methods}, you determine the quality of your solution, and finally\item you express the entire story \emph{comprehensibly}, clearly, and lucidly in a 20- to 60-page book, which becomes your thesis.
+\end{enumerate}
+
+By submitting a thesis, the student proves that they are capable of understanding the results of recent research, using them to scientifically guide and analyse their own work, and communicating the outcome comprehensibly to others.
+
+The work on the thesis is typically started by finding a supervisor and agreeing on the topic. You will typically need to write an annotation of the thesis, which comprises a condensed summary of the main idea and expected results. The choices are submitted to administration, and after some time, you will be officially tasked with completing the thesis assignment.
+
+Before the thesis is assigned, you typically prepare for the main work; e.g., by testing all the software libraries, tools, and methods that you will need, exploring your target domain, environment and subjects, creating and testing various prototypes and proof-of-concepts, reading relevant academic literature, and refining your approach (and the thesis annotation) based on initial findings.
+
+The preparation phase is often quite crucial, as it is where you may discover many potential roadblocks and refine your approach before committing to the full thesis. Generally, the work conducted in advance gives you much better chance to finish the thesis without surprises later. For similar reasons, one of the main tasks of the supervisor is to know the roadblocks that you do not see yet, and prevent you from committing to a thesis that is not finishable or defendable.
+
+\subsection{How to recognize a good thesis topic?}
+
+Before you officially register a thesis --- and ideally before you start committing to the task at all --- you should know the concrete instances of terms highlighted in the points 1--4 above. In particular, you should be able to clearly answer the following questions:
+
+\begin{description}
+\item[Is my idea even relevant?]
+To get the answer, go to Google Scholar and try to find articles that are not too old (say, at most 15--20 years, depending on the area), are not visibly outdated, and are relevant to your topic. If you cannot find any recent academic work on your topic, it might be too niche, already solved, or not academically interesting. Your supervisor will often help you find the latest research in the area.
+\item[Is the problem I want to solve even suitable?]
+No one expects you to produce a completely new and revolutionary solution to your problem. The method for solving your problem should be known and already explored --- in particular, you are not expected to make any groundbreaking scientific discoveries! You should ``just'' properly use the existing methods in a slightly novel context of your problem. For example, you may apply a known approach in a way that no one has tried before, slightly modify the approach to enable use in a seemingly different domain, or combine existing approaches in a novel way. In other words: the problem should be non-trivial, but you should know in advance how to approach the solution.
+\item[Is the problem well-defined?]
+Solve one problem, and solve it well. You will often encounter a thesis reviewer telling you that your problem is not really a problem --- this is especially common for theses with topics such as ``I'll make a video game about X''. To provide an answer, you must have a direct, undeniable proof that after solving your problem is relevant and constitutes at least a minor advancement in some area (ideally, world will be much more beautiful and civilization will be better off with the problem solved). Ideally, you will be able to point out existing academic literature that states that your topic is indeed a problem worth solving.
+\item[How will I explain the problem to others?]
+Write your thesis proposal as a hypothesis, and design an experiment that you can conduct to either confirm or reject this hypothesis, or to clearly determine the boundaries of its validity. Some theses are not experiments per se, but may be easily reworded as a case study, user testing, performance analysis, or theoretical proof. Mainly, the hypothesis--experiment wording helps you to convey the difficulty of the task, and clearly point out the ``unknowns'' that you aim to uncover.
+\item[Am I trying to solve an exceedingly hard problem, or multiple problems at once?]
+In such cases, you might be shooting yourself in a foot: You will lose a lot of time on something that is not necessary for the thesis, and your thesis reviewer will get annoyed trying to spot the single problem that you are solving. If your thesis addresses multiple smaller problems, you must correctly frame them in a single, well-defined and topically consistent group of problems.
+\item[How do I present my results?]
+In your thesis, you will have to prove that you actually solved something, and reviewers will, by default, actively doubt that you accomplished anything meaningful. Prepare a clear method for evaluating your results. In computer science, the most common evaluation methods include performance measurements (speed, memory usage, accuracy), comparative analysis (how does your solution compare to existing approaches?), case studies (real-world applications of your solution), user studies (how do people interact with and benefit from your work?), and theoretical analysis (including mathematical proofs and logical arguments). It is extremely useful to show plots, statistics, and various other visualized evidence.
+\item[How do I interpret my results?]
+Ideally, you will compare your results with ones from people who solved similar problems. Besides measuring your own solution, you might also need to measure the alternative implementations and approaches, use a comparable measurement methodology (benchmark) to allow comparison to other benchmarked work, and ensure fair comparison conditions. \emph{However, no one expects you to win such comparison!} A negative result is also a result, and thesis reviewers understand this. On the other hand, they will have no understanding for irreproducible measurements or unfair comparisons.
+\item[How will I fill all these pages with text?]
+Can you write 20--60 moderately amusing pages about your work? If not, you will be able to gain inspiration from reading academic literature thoroughly and summarizing your findings (see above), conducting your own experiments and analysis, reflecting on the broader implications of your work. Typically, you can write a lot of good text simply by reviewing 2--3 research papers that your thesis builds upon, and summarizing them within the context of your problem.
+\item[Am I doing it right?]
+To understand what is typically expected, examine some of the completed theses in your field. Look into thesis repositories from your institution\footnote{\url{https://dspace.cuni.cz/} for Charles University}, examine what makes a thesis successful, observe the different approaches to similar problems, writing styles and organizational structures. To get a good picture of the common issues and expectations, examine the official reviews from the supervisors and reviewers on several theses (these are typically deposited along with the thesis).
+\item[Am I making it in time?]
+Allocate a lot of time for writing, editing, and making good pictures. At the \emph{extreme barest minimum}, allocate at least one full month of work for fixing and incorporating the comments from your supervisor, especially if you never wrote a thesis before. Check the thesis submission requirements in advance; in particular, if you are supposed to print your thesis on paper, order the printing service with sufficient time reserve.
+\item[Who will tell me what to do next?]
+You will. Remember that it is \emph{your} thesis --- while your supervisor will try to guide you, it is ultimately you who is responsible for your own work (and success). You are thus expected to take intiative (and many would argue that the main point of the theses is precisely to \emph{show the initiative}). In particular, never wait for your advisor to give you tasks. Be proactive, work independently, solve issues well before deadlines, come to meetings equipped with prepared questions and clearly summarized progress updates and milestones, and bring up your own ideas about next steps.
+\end{description}
+
+\section{What to put into the first chapter?}
 
 First chapter usually builds the theoretical background necessary for readers to understand the rest of the thesis. You should summarize and reference a lot of existing literature and research.
 
