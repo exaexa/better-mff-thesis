@@ -35,4 +35,6 @@ jobs:
       - name: Get PDFs
         uses: actions/download-artifact@v5
       - name: Run VeraPDF
-        run: verify Thesis/*.pdf | tee /dev/stderr | grep -qE 'nonCompliant="0" failedJobs="0"'
+        run: |
+          ls -R
+          verify Thesis/*.pdf | tee /dev/stderr | grep -qE 'nonCompliant="0" failedJobs="0"'
