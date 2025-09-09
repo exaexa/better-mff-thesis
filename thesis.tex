@@ -15,17 +15,19 @@
 %\usepackage[textwidth=145mm,textheight=247mm]{geometry}
 
 %%% TYPICAL FONT CHOICES (uncomment what you like) %%%
-% Recommended combo: Libertinus (autoselects Biolinum for sans) and everything
-% else (math+tt) comes from Latin Modern)
-\usepackage{lmodern}
-\usepackage[mono=false]{libertinus}
 
 % For the "classic" LaTeX fonts (very good for pure math theses), simply
-% comment out the libertinus package above.
+% comment out any other font choices.
+
+% Recommended combo: Libertinus (autoselects Biolinum for sans), typewriter
+% font comes from AnonymousPro. If you like libertinus a lot, you can try the
+% mono font from Libertinus too -- simply remove the `mono=false` argument.
+% `StretchTT=1` seems required to make the PDF/A validation pass.)
+\usepackage[mono=false,StretchTT=1]{libertinus}
 
 % IBM Plex font suite: nice, but requires us to fine-tune the sizes and does
 % not directly support small caps (\textsc):
-%\usepackage[usefilenames,RM={Scale=0.88},SS={Scale=0.88},SScon={Scale=0.88},TT={Scale=0.88},DefaultFeatures={Ligatures=Common}]{plex-otf}
+%\usepackage[RM={Scale=0.88},SS={Scale=0.88},SScon={Scale=0.88},TT={Scale=0.88},DefaultFeatures={Ligatures=Common}]{plex-otf}
 
 % TeX Gyre combo (Pagella+Heros+Cursor)
 %\usepackage{fontspec}
