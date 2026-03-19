@@ -1,24 +1,26 @@
-name: CI
+name: Publish thesis PDFs to GitHub Pages
 
 on:
-  push:
-    branches: [ master ]
+  workflow_run:
+    workflows: ["Thesis build"]
+    types:
+      - completed
+    branches: [master]
 
 jobs:
-  build:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Build thesis PDFs and push them to pages
     runs-on: ubuntu-latest
-    container: { image: 'aergus/latex' }
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Build the thesis
-        run: latexmk thesis && latexmk abstract-cz && latexmk abstract-en
-      - name: Prepare a website directory
-        run: |
-          mkdir -p public
-          cp -v thesis.pdf public
-          cp -v abstract-*.pdf public
+      - uses: actions/checkout@v5
+      - name: Download Thesis artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: Thesis
+          path: public/
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload to gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

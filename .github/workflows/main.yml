@@ -1,4 +1,4 @@
-name: CI
+name: Thesis build
 
 on:
   push:
