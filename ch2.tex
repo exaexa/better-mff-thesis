@@ -77,13 +77,13 @@ Asd qsd 1sd & \textcolor{orange}{DANGEROUS} & 234234234 & (no data) \\
 \begin{algorithm}
 \begin{algorithmic}
 \Function{ExecuteWithHighProbability}{$A$}
-	\State $r \gets$ a random number between $0$ and $1$
-	\State $\varepsilon \gets 0.0000000000000000000000000000000000000042$
-	\If{$r\geq\varepsilon$}
-		\State execute $A$ \Comment{We discard the return value}
-	\Else
-		\State print: \texttt{Not today, sorry.}
-	\EndIf
+  \State $r \gets$ a random number between $0$ and $1$
+  \State $\varepsilon \gets 0.0000000000000000000000000000000000000042$
+  \If{$r\geq\varepsilon$}
+    \State execute $A$ \Comment{We discard the return value}
+  \Else
+    \State print: \texttt{Not today, sorry.}
+  \EndIf
 \EndFunction
 \end{algorithmic}
 \caption{Algorithm that executes an action with high probability. Do not care about formal semantics in the pseudocode --- semicolons, types, correct function call parameters and similar nonsense from `realistic' languages can be safely omitted. Instead make sure that the intuition behind (and perhaps some hints about its correctness or various corner cases) can be seen as easily as possible.}
