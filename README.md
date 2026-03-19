@@ -15,7 +15,14 @@ What's new:
 - Czech localization with properly translated references
 - Automated docker-based & CI build options
 
-See the [pre-built version](https://exaexa.github.io/better-mff-thesis/thesis.pdf) for details.
+See also:
+- the [**pre-built
+  PDF**](https://exaexa.github.io/better-mff-thesis/thesis.pdf) for
+  preview&details
+- the official template at
+  [gitlab.mff.cuni.cz/teaching/thesis-templates](https://gitlab.mff.cuni.cz/teaching/thesis-templates/thesis-en)
+- markdownized version at
+  [github/trueMiskin/better-mff-thesis-md](https://github.com/trueMiskin/better-mff-thesis-md)
 
 ## CI configuration
 
