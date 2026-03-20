@@ -1,4 +1,4 @@
-name: Thesis build
+name: build and verify PDFs
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Build the thesis
-        run: latexmk thesis && latexmk abstract-cz && latexmk abstract-en
+        run: latexmk thesis abstract-cz abstract-en
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:

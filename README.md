@@ -89,7 +89,7 @@ Pull requests welcome.
 ## License?
 
 Parts of the code (esp. the title page) are based on the original template (available from the faculty website) by Martin Mareš, Arnošt Komárek, and Michal Kulich.
-Small and useful fixes were coded or pointed out by Vít Kabele, Jan Joneš, Gabriela Suchopárová, Evžen Wybitul, and many others.
+Small and useful fixes were coded or pointed out by Vít Kabele, Jan Joneš, Gabriela Suchopárová, Evžen Wybitul, Michal Kodad, and many others.
 (Many thanks to everyone involved!)
 
 University and faculty logos are a property of the respective universities and faculties.
