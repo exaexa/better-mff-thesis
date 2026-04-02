@@ -13,7 +13,7 @@ latexmk:
   stage: build
   image: aergus/latex
   script: |
-    latexmk thesis && latexmk abstract-cz && latexmk abstract-en;
+    latexmk thesis abstract-cz abstract-en
   artifacts:
     paths:
       - thesis.pdf
@@ -22,6 +22,6 @@ latexmk:
 
 verapdf:
   stage: verify
-  image: ghcr.io/mff-cuni-cz/cuni-thesis-validator
+  image: ghcr.io/exaexa/cuni-thesis-validator
   script: |
-    verify *.pdf |tee /dev/stderr |grep -qE 'nonCompliant="0"'
+    verify *.pdf | tee /dev/stderr | grep -qE 'nonCompliant="0" failedJobs="0"'
