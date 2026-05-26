@@ -71,8 +71,50 @@ Dedication. \xxx{It is nice to say thanks to supervisors, friends, family, book 
 \xxx{{key} {words}}
 }
 
+% LLM part of the affidavit (see https://ai.cuni.cz/AI-81.html for rules).
+% You can generate this via the web form at: https://ai.cuni.cz/AI-80.html
+%
+% (English versions of the websites are available at
+% https://ai.cuni.cz/AIEN-42.html and https://ai.cuni.cz/AIEN-39.html )
+%
+% You will need to re-format the output from the website to LaTeX manually
+% (see below for templates).
+\long\def\llmAffidavit{
+\ifEN
+\xxx{Declare the use of generative ML/LLM tools, or leave this empty. Example
+declaration follows:}
+
+I declare that the following AI tools have been used in preparation of this
+thesis in the ways indicated:
+\begin{itemize}
+\item SlopTool in the period 2026-05-05 -- 2026-05-06
+   \\ Usage description: Fabulations.
+\end{itemize}
+Having used the above AI tools, I have thoroughly revised and edited the
+content as necessary and take full responsibility for the final form of the
+thesis.
+\else
+\xxx{Deklarujte použití generativních ML/LLM nástrojů, případně tuto část
+nechte prázdnou. Následuje příklad:}
+
+Prohlašuji, že při přípravě předložené práce byly použity následující nástroje
+AI uvedenými způsoby:
+\begin{itemize}
+\item SlopTool v období 5. 5. 2026 --- 6. 5. 2026
+   \\ Popis použití: Fabulace.
+\end{itemize}
+Po použití uvedených nástrojů umělé inteligence jsem důkladně revidoval(a) a
+upravil(a) obsah podle potřeby a plně přejímám odpovědnost za výslednou podobu
+práce.
+\fi
+}
+% If you did not use any tools that would require the above, you can use a
+% happy empty definition:
+%\def\llmAffidavit{}
+
 % If your abstracts are long and do not fit in the infopage, you can make the
-% fonts a bit smaller by this setting. (Also, you should try to compress your abstract more.)
+% fonts a bit smaller by this setting. (Also, you should try to compress your
+% abstract more.)
 % Alternatively, consider increasing the size of the page by uncommenting the
 % geometry modification in thesis.tex.
 \def\InfoPageFont{}
