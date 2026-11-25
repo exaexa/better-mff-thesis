@@ -43,8 +43,8 @@
 
 {
 \centerline{\vbox{\halign{\hbox to 0.45\hsize{\hfil #}&\hskip 0.5em\parbox[t]{0.45\hsize}{\raggedright #}\cr
-\ifEN Supervisor of the \ThesisGenitive thesis:
-\else Vedoucí \ThesisGenitive práce: \fi
+\ifEN Supervisor of the \ThesisTypeEN{} thesis:
+\else Vedoucí \ThesisGenitiveCS{} práce: \fi
 & \Supervisor \cr
 \noalign{\vspace{2mm}}
 \ifEN Study programme: \else Studijní program: \fi
@@ -72,9 +72,9 @@
 \begingroup\setlength{\parindent}{0pt}
 
 \ifEN
-I declare that I carried out this \ThesisAccusative thesis on my own, and only with the cited sources, literature and other professional sources. I understand that my work relates to the rights and obligations under the Act No. 121/2000 Sb., the Copyright Act, as amended, in particular the fact that the Charles University has the right to conclude a license agreement on the use of this work as a school work pursuant to Section 60 subsection 1 of the Copyright Act.
+I declare that I carried out this \ThesisTypeEN{} thesis on my own, and only with the cited sources, literature and other professional sources. I understand that my work relates to the rights and obligations under the Act No. 121/2000 Sb., the Copyright Act, as amended, in particular the fact that the Charles University has the right to conclude a license agreement on the use of this work as a school work pursuant to Section 60 subsection 1 of the Copyright Act.
 \else
-Prohlašuji, že jsem tuto \ThesisAccusative práci vypracoval(a) samostatně a~výhradně s~použitím citovaných pramenů, literatury a~dalších odborných zdrojů. Beru na vědomí, že se na moji práci vztahují práva a~povinnosti vyplývající ze zákona č.~121/2000 Sb., autorského zákona v platném znění, zejména skutečnost, že Univerzita Karlova má právo na uzavření licenční smlouvy o~užití této práce jako školního díla podle § 60 odst. 1 autorského zákona.
+Prohlašuji, že jsem tuto \ThesisAccusativeCS{} práci vypracoval(a) samostatně a~výhradně s~použitím citovaných pramenů, literatury a~dalších odborných zdrojů. Beru na vědomí, že se na moji práci vztahují práva a~povinnosti vyplývající ze zákona č.~121/2000 Sb., autorského zákona v platném znění, zejména skutečnost, že Univerzita Karlova má právo na uzavření licenční smlouvy o~užití této práce jako školního díla podle § 60 odst. 1 autorského zákona.
 \fi
 
 \llmAffidavit
@@ -109,32 +109,35 @@ V \hbox to 6em{\dotfill} dne \hbox to 6em{\dotfill}
 
 \newpage
 
-% mandatory information page
+% mandatory information page (infoblock definitions)
 
-\openright
-
+\def\infoblockCS{%
 \vbox to 0.49\vsize{\InfoPageFont
 \setlength\parindent{0mm}
 \setlength\parskip{5mm}
 
-\ifEN Title: \else Název práce: \fi
-\ThesisTitle
+Název práce:
+\ThesisTitleCS
 
-\ifEN Author: \else Autor: \fi
+Autor:
 \ThesisAuthor
 
-\DeptType:
-\Department
+\DeptTypeCS:
+\DepartmentCS
 
-\ifEN Supervisor: \else Vedoucí \ThesisGenitive práce: \fi
-\Supervisor, \SupervisorsDepartment
+Vedoucí \ThesisGenitiveCS{} práce:
+\Supervisor, \SupervisorsDepartmentCS
 
-\ifEN Abstract: \AbstractEN \else Abstrakt: \AbstractCS \fi
+Abstrakt:
+\AbstractCS
 
-\ifEN Keywords: \else Klíčová slova: \fi
-\Keywords
+Klíčová slova:
+\KeywordsCS
 
-\vss}\ifEN\relax\else\nobreak\vbox to 0.49\vsize{\InfoPageFont
+\vss}}
+
+\def\infoblockEN{%
+\vbox to 0.49\vsize{\InfoPageFont
 \setlength\parindent{0mm}
 \setlength\parskip{5mm}
 
@@ -156,7 +159,17 @@ Abstract:
 Keywords:
 \KeywordsEN
 
-\vss}
+\vss}}
+
+\openright
+\ifEN
+  \infoblockEN
+  \nobreak
+  \infoblockCS
+\else
+  \infoblockCS
+  \nobreak
+  \infoblockEN
 \fi
 
 \newpage

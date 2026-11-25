@@ -17,59 +17,99 @@
 
 \def\UKName{Charles University in Prague} % this is not used in the "mff" style
 
-% Thesis type names, as used in several places in the title
-\def\ThesisTypeTitle{\ifEN BACHELOR THESIS \else BAKALÁŘSKÁ PRÁCE \fi}
-%\def\ThesisTypeTitle{\ifEN MASTER THESIS \else DIPLOMOVÁ PRÁCE \fi}
-%\def\ThesisTypeTitle{\ifEN RIGOROUS THESIS \else RIGORÓZNÍ PRÁCE \fi}
-%\def\ThesisTypeTitle{\ifEN DOCTORAL THESIS \else DISERTAČNÍ PRÁCE \fi}
-\def\ThesisGenitive{\ifEN bachelor \else bakalářské \fi}
-%\def\ThesisGenitive{\ifEN master \else diplomové \fi}
-%\def\ThesisGenitive{\ifEN rigorous \else rigorózní \fi}
-%\def\ThesisGenitive{\ifEN doctoral \else disertační \fi}
-\def\ThesisAccusative{\ifEN bachelor \else bakalářskou \fi}
-%\def\ThesisAccusative{\ifEN master \else diplomovou \fi}
-%\def\ThesisAccusative{\ifEN rigorous \else rigorózní \fi}
-%\def\ThesisAccusative{\ifEN doctoral \else disertační \fi}
 
+% Thesis type naming; uncomment one of the combinations:
+\def\ThesisTypeTitle{\ifEN BACHELOR THESIS \else BAKALÁŘSKÁ PRÁCE \fi}
+\def\ThesisTypeEN{bachelor}
+\def\ThesisGenitiveCS{bakalářské}
+\def\ThesisAccusativeCS{bakalářskou}
+
+%\def\ThesisTypeTitle{\ifEN MASTER THESIS \else DIPLOMOVÁ PRÁCE \fi}
+%\def\ThesisTypeEN{master}
+%\def\ThesisGenitiveCS{diplomové}
+%\def\ThesisAccusativeCS{diplomovou}
+
+%\def\ThesisTypeTitle{\ifEN RIGOROUS THESIS \else RIGORÓZNÍ PRÁCE \fi}
+%\def\ThesisTypeEN{rigorous}
+%\def\ThesisGenitiveCS{rigorózní}
+%\def\ThesisAccusativeCS{rigorózní }
+
+%\def\ThesisTypeTitle{\ifEN DOCTORAL THESIS \else DISERTAČNÍ PRÁCE \fi}
+%\def\ThesisTypeEN{doctoral}
+%\def\ThesisGenitiveCS{disertační}
+%\def\ThesisAccusativeCS{disertační}
 
 
 %%% Fill in your details %%%
+%
+% Many of the details have to be provided in two languages; fill in the
+% corresponding CS and EN variants of the macro.
+%
+% Note: \xxx is a "ToDo label" which makes the unfilled fields very visible.
+% In the end, all \xxx should be removed.
+%
+% In case you do not need to display the information in more languages, edit
+% `title.tex` and erase what is not required.
 
-% (Note: \xxx is a "ToDo label" which makes the unfilled visible. Remove it.)
-\def\ThesisTitle{\xxx{Thesis title}}
-\def\ThesisAuthor{\xxx{Your Name Surname}}
-\def\YearSubmitted{\xxx{YEAR}}
-
-% department assigned to the thesis
-\def\Department{\xxx{Name of the department}}
-% Is it a department (katedra), or an institute (ústav)?
-\def\DeptType{\xxx{Department}}
-
-\def\Supervisor{\xxx{Supername Supersurname}}
-\def\SupervisorsDepartment{\xxx{department}}
-
-% Study programme and specialization
+% Study programme and specialization (use English or Czech depending on the
+% main language of your thesis)
 \def\StudyProgramme{\xxx{study programme}}
 \def\StudyBranch{\xxx{study branch}}
 
+% Free-form self-expression opportunity
 \def\Dedication{%
 Dedication. \xxx{It is nice to say thanks to supervisors, friends, family, book authors and food providers.}
 }
+
+% Thesis identification
+\def\ThesisTitleEN{\xxx{Thesis title}}
+\def\ThesisAuthor{\xxx{Your Name Surname}}
+\def\YearSubmitted{\xxx{YEAR}}
+
+% Department assigned to the thesis
+\def\DepartmentEN{\xxx{Name of the department}}
+% Is it a department (katedra), or an institute (ústav)?
+\def\DeptTypeEN{\xxx{Department}}
+
+\def\Supervisor{\xxx{Supername Supersurname}}
+\def\SupervisorsDepartmentEN{\xxx{department}}
 
 \def\AbstractEN{%
 \xxx{Abstracts are an abstract form of art. Use the most precise, shortest sentences that state what problem the thesis addresses, how it is approached, pinpoint the exact result achieved, and describe the applications and significance of the results. Highlight anything novel that was discovered or improved by the thesis. Maximum length is 200 words, but try to fit into 120. Abstracts are often used for deciding if a reviewer will be suitable for the thesis; a well-written abstract thus increases the probability of getting a reviewer who will like the thesis.}
 % ABSTRACT IS NOT A COPY OF YOUR THESIS ASSIGNMENT!
 }
 
+% 3 to 5 keywords (recommended), each enclosed in curly braces.
+% Keywords are useful for indexing and searching for the theses by topic.
+\def\KeywordsEN{%
+\xxx{{key} {words}}
+}
+
+% The same information, but in czech.
+\def\ThesisTitleCS{\xxx{Název práce česky}}
+\def\DepartmentCS{\xxx{Název pracoviště}}
+\def\DeptTypeCS{\xxx{Katedra nebo Ústav}}
+\def\SupervisorsDepartmentCS{\xxx{Název pracoviště vedoucího}}
+
 \def\AbstractCS{%
 \xxx{You will need to submit both Czech and English abstract to the SIS, no matter what language you use in the thesis. If writing in English, translate the contents of \texttt{\textbackslash{}AbstractEN} into this field. In case you do not speak czech, your supervisor should be able to help you with the translation.}
 }
 
-% 3 to 5 keywords (recommended), each enclosed in curly braces.
-% Keywords are useful for indexing and searching for the theses by topic.
-\def\Keywords{%
+\def\KeywordsCS{%
 \xxx{{key} {words}}
 }
+
+% additional helpers for the frontpage typesetting
+\ifEN\let\ThesisTitle=\ThesisTitleEN\else\let\ThesisTitle=\ThesisTitleCS\fi
+\ifEN\let\Department=\DepartmentEN\else\let\Department=\DepartmentCS\fi
+
+% If your abstracts are long and do not fit in the infopage, you can make the
+% fonts a bit smaller by this setting. (Also, you should try to compress your
+% abstract more.)
+% Alternatively, consider increasing the size of the page by uncommenting the
+% geometry modification in thesis.tex.
+\def\InfoPageFont{}
+%\def\InfoPageFont{\small}  %uncomment to decrease font size
 
 % LLM part of the affidavit (see https://ai.cuni.cz/AI-81.html for rules).
 % You can generate this via the web form at: https://ai.cuni.cz/AI-80.html
@@ -111,25 +151,3 @@ práce.
 % If you did not use any tools that would require the above, you can use a
 % happy empty definition:
 %\def\llmAffidavit{}
-
-% If your abstracts are long and do not fit in the infopage, you can make the
-% fonts a bit smaller by this setting. (Also, you should try to compress your
-% abstract more.)
-% Alternatively, consider increasing the size of the page by uncommenting the
-% geometry modification in thesis.tex.
-\def\InfoPageFont{}
-%\def\InfoPageFont{\small}  %uncomment to decrease font size
-
-\ifEN\relax\else
-% If you are writing a czech thesis, you additionally need to fill in the
-% english translation of the metadata here!
-\def\ThesisTitleEN{\xxx{Thesis title in English}}
-\def\DepartmentEN{\xxx{Name of the department in English}}
-\def\DeptTypeEN{\xxx{Department}}
-\def\SupervisorsDepartmentEN{\xxx{Superdepartment}}
-\def\StudyProgrammeEN{\xxx{study programme}}
-\def\StudyBranchEN{\xxx{study branch}}
-\def\KeywordsEN{%
-\xxx{{key} {words}}
-}
-\fi
