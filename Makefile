@@ -9,4 +9,4 @@ all:
 	$(LATEXMK) $(ABSTRACT)-en
 
 clean:
-	$(LATEXMK) -C
+	$(LATEXMK) -C $(NAME) $(ABSTRACT)-cz $(ABSTRACT)-en
