@@ -2,16 +2,17 @@
 
 \pagestyle{empty}
 \hypersetup{pageanchor=false}
-\begin{center}
+\begingroup\centering
 
 % top part of the layout, this actually differs between faculties
 
 \def\ThesisTitleXmff{%
-  \ifEN
-    \centerline{\mbox{\includegraphics[width=166mm]{img/logo-en.pdf}}}
-  \else
-    \centerline{\mbox{\includegraphics[width=166mm]{img/logo-cs.pdf}}}
-  \fi
+  \centerline{%
+    \ifEN
+      \includegraphics[width=166mm]{img/logo-en.pdf}%
+    \else
+      \includegraphics[width=166mm]{img/logo-cs.pdf}%
+    \fi}%
   \vspace{-8mm}\vfill%
   {\bf\Large\ThesisTypeTitle}
   \vfill%
@@ -56,8 +57,7 @@
 \ifEN Prague \else Praha \fi
 \YearSubmitted
 
-\end{center}
-
+\endgroup
 \newpage
 
 % remember to sign this!
